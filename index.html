@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shayan Alinezhad | Developer & Instructor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --transition-speed: 0.3s;
+        }
+        
+        .dark {
+            --primary: #00ff00;
+            --primary-dim: #00cc00;
+            --secondary: #0a0a0a;
+            --text: #e0e0e0;
+            --accent: #00cc00;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --border: #333333;
+            --card-bg: #0a0a0a;
+            --footer-bg: #0a0a0a;
+            --terminal-bg: #0a0a0a;
+            --terminal-header: #121212;
+            --nav-bg: rgba(10, 10, 10, 0.8);
+            --section-alt-bg: rgba(0, 0, 0, 0.3);
+            --input-bg: #121212;
+            --font-family-base: 'Fira Code', monospace;
+            --font-family-code: 'Fira Code', monospace;
+            --skill-bg: #121212;
+            --tag-bg: #1a1a1a;
+            --tag-text: #e0e0e0;
+        }
+        
+        .light {
+            --primary: #0891b2;
+            --primary-dim: #0e7490;
+            --secondary: #ffffff;
+            --text: #334155;
+            --accent: #0891b2;
+            --dark: #f1f5f9;
+            --darker: #ffffff;
+            --border: #cbd5e1;
+            --card-bg: #ffffff;
+            --footer-bg: #f8fafc;
+            --terminal-bg: rgba(255, 255, 255, 0.85);
+            --terminal-header: #e2e8f0;
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --section-alt-bg: rgba(241, 245, 249, 0.8);
+            --input-bg: #ffffff;
+            --font-family-base: 'Inter', sans-serif;
+            --font-family-code: 'Fira Code', monospace;
+            --skill-bg: #e2e8f0;
+            --tag-bg: #e0f2fe;
+            --tag-text: #0369a1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            transition: background-color var(--transition-speed), 
+                        color var(--transition-speed), 
+                        border-color var(--transition-speed), 
+                        box-shadow var(--transition-speed),
+                        text-shadow var(--transition-speed),
+                        transform var(--transition-speed);
+        }
+        
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--darker);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body.farsi {
+            font-family: 'Vazirmatn', sans-serif;
+            direction: rtl;
+        }
+        
+        .terminal {
+            background-color: var(--terminal-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            font-family: var(--font-family-code);
+            transition: all 0.3s ease;
+        }
+        
+        .light .terminal {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .terminal::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-color: var(--terminal-header);
+            border-bottom: 1px solid var(--border);
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+        
+        .terminal::after {
+            content: "● ● ●";
+            position: absolute;
+            top: 8px;
+            left: 15px;
+            font-size: 12px;
+            color: #555;
+        }
+        
+        .dark .terminal::after {
+            content: "● ● ●";
+            color: #555;
+        }
+        
+        .light .terminal::after {
+            content: "🔴 🟡 🟢";
+            color: #555;
+        }
+        
+        .terminal-content {
+            margin-top: 20px;
+            font-family: var(--font-family-code);
+        }
+        
+        .typing-animation {
+            border-right: 2px solid var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .btn-primary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover {
+            color: var(--darker);
+        }
+        
+        .btn-primary:hover::before {
+            left: 0;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background-color: var(--skill-bg);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: width 1.5s ease;
+        }
+        
+        .glitch {
+            position: relative;
+            animation: glitch 1s linear infinite;
+        }
+        
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+        
+        .glitch:before,
+        .glitch:after {
+            content: attr(title);
+            position: absolute;
+            left: 0;
+        }
+        
+        .glitch:before {
+            animation: glitchTop 1s linear infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        }
+        
+        @keyframes glitchTop {
+            2%, 64% {
+                transform: translate(2px, -2px);
+            }
+            4%, 60% {
+                transform: translate(-2px, 2px);
+            }
+            62% {
+                transform: translate(13px, -1px) skew(-13deg);
+            }
+        }
+        
+        .glitch:after {
+            animation: glitchBottom 1.5s linear infinite;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        }
+        
+        @keyframes glitchBottom {
+            2%, 64% {
+                transform: translate(-2px, 0);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0);
+            }
+            62% {
+                transform: translate(-22px, 5px) skew(21deg);
+            }
+        }
+        
+        .matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.05;
+        }
+        
+        .light .matrix-bg {
+            opacity: 0;
+        }
+        
+        .language-toggle {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background-color: var(--dark);
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .language-toggle::after {
+            content: "EN";
+            position: absolute;
+            top: 50%;
+            left: 8px;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--darker);
+            font-size: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .language-toggle.active {
+            background-color: var(--dark);
+        }
+        
+        .language-toggle.active::after {
+            content: "FA";
+            left: calc(100% - 30px);
+        }
+        
+        .theme-toggle {
+            cursor: pointer;
+            width: 50px;
+            height: 26px;
+            background-color: var(--dark);
+            border-radius: 13px;
+            position: relative;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            border: 1px solid var(--border);
+        }
+        
+        .theme-toggle::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .light .theme-toggle::before {
+            left: calc(100% - 22px);
+        }
+        
+        .theme-toggle .sun-icon,
+        .theme-toggle .moon-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .theme-toggle .sun-icon {
+            right: 6px;
+            opacity: 0;
+        }
+        
+        .theme-toggle .moon-icon {
+            left: 6px;
+            opacity: 1;
+        }
+        
+        .light .theme-toggle .sun-icon {
+            opacity: 1;
+        }
+        
+        .light .theme-toggle .moon-icon {
+            opacity: 0;
+        }
+        
+        .code-comment {
+            color: #6a9955;
+        }
+        
+        .light .code-comment {
+            color: #008000;
+        }
+        
+        .code-keyword {
+            color: #569cd6;
+        }
+        
+        .light .code-keyword {
+            color: #0000ff;
+        }
+        
+        .code-string {
+            color: #ce9178;
+        }
+        
+        .light .code-string {
+            color: #a31515;
+        }
+        
+        .code-function {
+            color: #dcdcaa;
+        }
+        
+        .light .code-function {
+            color: #795e26;
+        }
+        
+        .code-variable {
+            color: #9cdcfe;
+        }
+        
+        .light .code-variable {
+            color: #001080;
+        }
+        
+        .code-number {
+            color: #b5cea8;
+        }
+        
+        .light .code-number {
+            color: #098658;
+        }
+        
+        .code-class {
+            color: #4ec9b0;
+        }
+        
+        .light .code-class {
+            color: #267f99;
+        }
+        
+        .cursor::after {
+            content: '|';
+            animation: cursor 1s infinite;
+        }
+        
+        @keyframes cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .light .project-card:hover {
+            box-shadow: 0 10px 30px rgba(8, 145, 178, 0.1);
+        }
+        
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+        
+        .nav-container {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-heading::before {
+            content: "<";
+            color: var(--primary);
+            margin-right: 0.5rem;
+            opacity: 0.7;
+        }
+        
+        .section-heading::after {
+            content: "/>";
+            color: var(--primary);
+            margin-left: 0.5rem;
+            opacity: 0.7;
+        }
+        
+        .contact-input {
+            background-color: var(--input-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(8, 145, 178, 0.2);
+            outline: none;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .neon-logo {
+            font-family: var(--font-family-code);
+            font-weight: bold;
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 
+                0 0 5px var(--primary),
+                0 0 10px var(--primary),
+                0 0 20px var(--primary),
+                0 0 40px var(--primary);
+            animation: neon-flicker 1.5s infinite alternate;
+            transition: text-shadow 0.5s ease;
+        }
+        
+        .light .neon-logo {
+            color: #0c4a6e;
+            text-shadow: 
+                0 0 5px var(--primary),
+                0 0 10px var(--primary),
+                0 0 20px var(--primary);
+        }
+        
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 5px var(--primary),
+                    0 0 10px var(--primary),
+                    0 0 20px var(--primary),
+                    0 0 40px var(--primary);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        .light .neon-flicker {
+            animation: light-neon-flicker 1.5s infinite alternate;
+        }
+        
+        @keyframes light-neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 5px var(--primary),
+                    0 0 10px var(--primary),
+                    0 0 20px var(--primary);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+        
+        .neon-text {
+            color: #fff;
+            text-shadow: 
+                0 0 5px var(--primary),
+                0 0 10px var(--primary),
+                0 0 20px var(--primary);
+            animation: neon-pulse 1.5s infinite alternate;
+        }
+        
+        .light .neon-text {
+            color: #0c4a6e;
+            text-shadow: 
+                0 0 5px var(--primary),
+                0 0 10px var(--primary);
+        }
+        
+        @keyframes neon-pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+        
+        .neon-name {
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 
+                0 0 5px var(--primary),
+                0 0 10px var(--primary),
+                0 0 20px var(--primary),
+                0 0 40px var(--primary);
+            animation: neon-pulse 2s infinite alternate;
+        }
+        
+        .light .neon-name {
+            color: #0c4a6e;
+            text-shadow: 
+                0 0 5px var(--primary),
+                0 0 10px var(--primary);
+        }
+        
+        .subtle-name {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+            color: #fff;
+            text-shadow: 
+                0 0 3px var(--primary),
+                0 0 6px var(--primary);
+            animation: neon-pulse 2s infinite alternate;
+        }
+        
+        .light .subtle-name {
+            color: #0c4a6e;
+            text-shadow: 
+                0 0 3px var(--primary),
+                0 0 6px var(--primary);
+        }
+        
+        .alert {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            z-index: 100;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .alert.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .alert-success {
+            background-color: rgba(0, 128, 0, 0.2);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .section-alt {
+            background-color: var(--section-alt-bg);
+        }
+        
+        footer {
+            background-color: var(--footer-bg);
+            border-top: 1px solid var(--border);
+        }
+        
+        /* Light mode background patterns */
+        .light {
+            background-color: #ffffff;
+            position: relative;
+        }
+        
+        .light::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(to right, rgba(8, 145, 178, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(8, 145, 178, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -2;
+            pointer-events: none;
+        }
+        
+        .light::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(8, 145, 178, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: -3;
+            pointer-events: none;
+        }
+        
+        /* Light mode specific styles */
+        .light .project-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .light .tag-bg {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+        }
+        
+        /* Mobile-first order adjustment */
+        @media (max-width: 767px) {
+            .logo-section {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+            
+            .terminal-section {
+                order: 1;
+            }
+            
+            .neon-logo {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Light mode geometric pattern */
+        .light-pattern {
+            display: none;
+        }
+        
+        .light .light-pattern {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -4;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        
+        /* Light mode terminal styling */
+        .light .terminal {
+            border: 1px solid #cbd5e1;
+            box-shadow: 
+                0 4px 6px rgba(0, 0, 0, 0.05),
+                0 0 0 1px rgba(8, 145, 178, 0.1);
+        }
+        
+        /* Light mode skill bar animation */
+        .light .skill-progress {
+            background: linear-gradient(90deg, var(--primary), #38bdf8);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <canvas id="matrix" class="matrix-bg"></canvas>
+    <div class="light-pattern"></div>
+    
+    <!-- Success Alert -->
+    <div id="successAlert" class="alert alert-success">
+        <span class="en-content">Your message was sent successfully!</span>
+        <span class="fa-content hidden">پیام شما با موفقیت ارسال شد!</span>
+    </div>
+    
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-container">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-xl font-bold text-primary cursor-pointer glitch" title="<Cloner/>">
+                    <span class="text-green-500 dark:text-green-500 light:text-cyan-600">&lt;</span>Shayan<span class="text-green-500 dark:text-green-500 light:text-cyan-600">/&gt;</span>
+                </span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link en-content">Home</a>
+                <a href="#about" class="nav-link en-content">About</a>
+                <a href="#skills" class="nav-link en-content">Skills</a>
+                <a href="#projects" class="nav-link en-content">Projects</a>
+                <a href="#contact" class="nav-link en-content">Contact</a>
+                
+                <a href="#home" class="nav-link fa-content hidden">خانه</a>
+                <a href="#about" class="nav-link fa-content hidden">درباره من</a>
+                <a href="#skills" class="nav-link fa-content hidden">مهارت‌ها</a>
+                <a href="#projects" class="nav-link fa-content hidden">پروژه‌ها</a>
+                <a href="#contact" class="nav-link fa-content hidden">تماس</a>
+                
+                <div class="flex items-center">
+                    <div class="language-toggle" id="languageToggle"></div>
+                    <div class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon moon-icon"></i>
+                        <i class="fas fa-sun sun-icon"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 py-4" style="background-color: var(--nav-bg);">
+            <a href="#home" class="block py-2 nav-link en-content">Home</a>
+            <a href="#about" class="block py-2 nav-link en-content">About</a>
+            <a href="#skills" class="block py-2 nav-link en-content">Skills</a>
+            <a href="#projects" class="block py-2 nav-link en-content">Projects</a>
+            <a href="#contact" class="block py-2 nav-link en-content">Contact</a>
+            
+            <a href="#home" class="block py-2 nav-link fa-content hidden">خانه</a>
+            <a href="#about" class="block py-2 nav-link fa-content hidden">درباره من</a>
+            <a href="#skills" class="block py-2 nav-link fa-content hidden">مهارت‌ها</a>
+            <a href="#projects" class="block py-2 nav-link fa-content hidden">پروژه‌ها</a>
+            <a href="#contact" class="block py-2 nav-link fa-content hidden">تماس</a>
+            
+            <div class="mt-4 flex items-center">
+                <span class="mr-3 en-content">Language:</span>
+                <span class="mr-3 fa-content hidden">زبان:</span>
+                <div class="language-toggle" id="mobileLanguageToggle"></div>
+                
+                <span class="mr-3 ml-4 en-content">Theme:</span>
+                <span class="mr-3 ml-4 fa-content hidden">تم:</span>
+                <div class="theme-toggle" id="mobileThemeToggle">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Terminal Section -->
+                <div class="md:w-1/2 terminal-section" data-aos="fade-right">
+                    <div class="terminal">
+                        <div class="terminal-content">
+                            <p class="code-comment en-content">// Welcome to my portfolio</p>
+                            <p class="code-comment fa-content hidden">// به پورتفولیوی من خوش آمدید</p>
+                            <p class="mt-4">
+                                <span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+                            </p>
+                            <p class="ml-4">
+                                <span class="code-variable en-content">name</span><span class="code-variable fa-content hidden">نام</span>: <span class="code-string">"Shayan Alinezhad"</span>,
+                            </p>
+                            <p class="ml-4">
+                                <span class="code-variable en-content">location</span><span class="code-variable fa-content hidden">موقعیت</span>: <span class="code-string">"Mazandaran, Iran"</span>,
+                            </p>
+                            <p class="ml-4">
+                                <span class="code-variable en-content">skills</span><span class="code-variable fa-content hidden">مهارت‌ها</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"C#"</span>, <span class="code-string">"Django"</span>],
+                            </p>
+                            <p class="ml-4">
+                                <span class="code-variable en-content">passion</span><span class="code-variable fa-content hidden">علاقه</span>: <span class="code-string en-content">"Teaching Programming"</span><span class="code-string fa-content hidden">"آموزش برنامه‌نویسی"</span>
+                            </p>
+                            <p>};</p>
+                            <p class="mt-4 typing-animation">
+                                <span class="code-function">developer</span>.<span class="code-function en-content">sayHello</span><span class="code-function fa-content hidden">سلام</span>();
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="#contact" class="btn-primary px-6 py-3 rounded-md inline-block en-content">Get in Touch</a>
+                        <a href="#contact" class="btn-primary px-6 py-3 rounded-md inline-block fa-content hidden">تماس با من</a>
+                    </div>
+                </div>
+                
+                <!-- Logo Section -->
+                <div class="md:w-1/2 mt-10 md:mt-0 flex flex-col justify-center items-center logo-section" data-aos="fade-left">
+                    <div class="text-center mb-4">
+                        <p class="text-lg neon-text en-content">Full-Stack Developer</p>
+                        <p class="text-lg neon-text fa-content hidden">توسعه‌دهنده فول‌استک</p>
+                    </div>
+                    <div class="neon-logo">
+                        Cloner
+                    </div>
+                    <div class="text-center">
+                        <p class="subtle-name en-content">Shayan Alinezhad</p>
+                        <p class="subtle-name fa-content hidden">شایان علی‌نژاد</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 section-alt">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 section-heading en-content" data-aos="fade-right">About Me</h2>
+            <h2 class="text-3xl font-bold mb-8 section-heading fa-content hidden" data-aos="fade-right">درباره من</h2>
+            
+            <div class="terminal" data-aos="fade-up">
+                <div class="terminal-content">
+                    <p class="code-comment en-content">/* Background information */</p>
+                    <p class="code-comment fa-content hidden">/* اطلاعات پیشینه */</p>
+                    <div class="mt-4 space-y-4">
+                        <p class="en-content">
+                            <span class="text-green-400">$</span> cat about_me.txt<br>
+                            <span class="cursor">I'm Shayan Alinezhad, a passionate programming instructor from Mazandaran, Iran. Currently studying Computer Science at the University of Science and Technology of Mazandaran and teaching at Nikan Programming Institute. Teaching is my main focus and profession - I love helping students understand programming concepts and develop their skills.</span>
+                        </p>
+                        <p class="fa-content hidden">
+                            <span class="text-green-400">$</span> cat about_me.txt<br>
+                            <span class="cursor">من شایان علی‌نژاد، یک مدرس برنامه‌نویسی با اشتیاق از مازندران، ایران هستم. در حال حاضر در رشته علوم کامپیوتر در ددانشگاه علوم فنون مازندران تحصیل می‌کنم و در موسسه برنامه‌نویسی نیکان تدریس می‌کنم. تدریس تمرکز و حرفه اصلی من است - من عاشق کمک به دانشجویان برای درک مفاهیم برنامه‌نویسی و توسعه مهارت‌های آنها هستم.</span>
+                        </p>
+                        
+                        <p class="en-content">
+                            <span class="text-green-400">$</span> ls education/<br>
+                            <span class="text-blue-400">BSc_Computer_Science.md</span> - University of Science and Technology of Mazandaran
+                        </p>
+                        <p class="fa-content hidden">
+                            <span class="text-green-400">$</span> ls education/<br>
+                            <span class="text-blue-400">کارشناسی_علوم_کامپیوتر.md</span> - دانشگاه علوم فنون مازندران
+                        </p>
+                        
+                        <p class="en-content">
+                            <span class="text-green-400">$</span> ls experience/<br>
+                            <span class="text-blue-400">Programming_Instructor.md</span> - Nikan Programming Institute<br>
+                            <span class="text-blue-400">Teaching_Philosophy.md</span> - Making complex concepts simple for students
+                        </p>
+                        <p class="fa-content hidden">
+                            <span class="text-green-400">$</span> ls experience/<br>
+                            <span class="text-blue-400">مدرس_برنامه‌نویسی.md</span> - موسسه برنامه‌نویسی نیکان<br>
+                            <span class="text-blue-400">فلسفه_تدریس.md</span> - ساده‌سازی مفاهیم پیچیده برای دانشجویان
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 section-heading en-content" data-aos="fade-right">Skills</h2>
+            <h2 class="text-3xl font-bold mb-8 section-heading fa-content hidden" data-aos="fade-right">مهارت‌ها</h2>
+            
+            <div class="terminal" data-aos="fade-up">
+                <div class="terminal-content">
+                    <p class="code-comment en-content">// Technical proficiency</p>
+                    <p class="code-comment fa-content hidden">// تخصص‌های فنی</p>
+                    
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Python</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                                <p class="text-sm text-gray-400 en-content">Basic programming concepts, data structures, and web development</p>
+                                <p class="text-sm text-gray-400 fa-content hidden">مفاهیم پایه برنامه‌نویسی، ساختمان داده‌ها و توسعه وب</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">C#</span>
+                                    <span>65%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 65%"></div>
+                                </div>
+                                <p class="text-sm text-gray-400 en-content">Basic programming concepts and desktop application development</p>
+                                <p class="text-sm text-gray-400 fa-content hidden">مفاهیم پایه برنامه‌نویسی و توسعه برنامه‌های دسکتاپ</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Django</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                                <p class="text-sm text-gray-400 en-content">Web development and basic database management</p>
+                                <p class="text-sm text-gray-400 fa-content hidden">توسعه وب و مدیریت پایه پایگاه داده</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">HTML/CSS</span>
+                                    <span>68%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 68%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">JavaScript</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">SQL</span>
+                                    <span>62%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 62%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 section-alt">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 section-heading en-content" data-aos="fade-right">Projects</h2>
+            <h2 class="text-3xl font-bold mb-8 section-heading fa-content hidden" data-aos="fade-right">پروژه‌ها</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="text-primary mb-4">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 en-content">Educational Platform</h3>
+                        <h3 class="text-xl font-bold mb-2 fa-content hidden">پلتفرم آموزشی</h3>
+                        <p class="text-gray-400 mb-4 en-content">A Django-based learning management system for teaching programming fundamentals to beginners.</p>
+                        <p class="text-gray-400 mb-4 fa-content hidden">یک سیستم مدیریت یادگیری مبتنی بر جنگو برای آموزش اصول برنامه‌نویسی به مبتدیان.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="tag-bg text-xs px-2 py-1 rounded">Python</span>
+                            <span class="tag-bg text-xs px-2 py-1 rounded">Django</span>
+                            <span class="tag-bg text-xs px-2 py-1 rounded">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="text-primary mb-4">
+                            <i class="fas fa-laptop-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 en-content">Programming Exercises</h3>
+                        <h3 class="text-xl font-bold mb-2 fa-content hidden">تمرین‌های برنامه‌نویسی</h3>
+                        <p class="text-gray-400 mb-4 en-content">A collection of programming exercises and solutions for teaching C# fundamentals.</p>
+                        <p class="text-gray-400 mb-4 fa-content hidden">مجموعه‌ای از تمرین‌ها و راه‌حل‌های برنامه‌نویسی برای آموزش اصول C#.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="tag-bg text-xs px-2 py-1 rounded">C#</span>
+                            <span class="tag-bg text-xs px-2 py-1 rounded">.NET</span>
+                            <span class="tag-bg text-xs px-2 py-1 rounded">Education</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6">
+                        <div class="text-primary mb-4">
+                            <i class="fas fa-chalkboard-teacher text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 en-content">Teaching Resources</h3>
+                        <h3 class="text-xl font-bold mb-2 fa-content hidden">منابع آموزشی</h3>
+                        <p class="text-gray-400 mb-4 en-content">A repository of teaching materials, slides, and code examples for programming courses.</p>
+                        <p class="text-gray-400 mb-4 fa-content hidden">مخزنی از مطالب آموزشی، اسلایدها و نمونه کدها برای دوره‌های برنامه‌نویسی.</p>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="tag-bg text-xs px-2 py-1 rounded">Python</span>
+                            <span class="tag-bg text-xs px-2 py-1 rounded">Education</span>
+                            <span class="tag-bg text-xs px-2 py-1 rounded">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 section-heading en-content" data-aos="fade-right">Contact</h2>
+            <h2 class="text-3xl font-bold mb-8 section-heading fa-content hidden" data-aos="fade-right">تماس</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="terminal" data-aos="fade-up">
+                    <div class="terminal-content">
+                        <p class="code-comment en-content">// Send me a message</p>
+                        <p class="code-comment fa-content hidden">// برای من پیام بفرستید</p>
+                        
+                        <form id="contactForm" class="mt-6 space-y-4">
+                            <div>
+                                <label class="block mb-2 text-sm en-content">Name</label>
+                                <label class="block mb-2 text-sm fa-content hidden">نام</label>
+                                <input type="text" name="name" class="w-full px-4 py-2 rounded-md contact-input" placeholder="string name = Console.ReadLine();" required>
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-sm en-content">Email</label>
+                                <label class="block mb-2 text-sm fa-content hidden">ایمیل</label>
+                                <input type="email" name="email" class="w-full px-4 py-2 rounded-md contact-input" placeholder="let email = prompt();
+" required>
+                            </div>
+                            <div>
+                                <label class="block mb-2 text-sm en-content">Message</label>
+                                <label class="block mb-2 text-sm fa-content hidden">پیام</label>
+                                <textarea name="message" class="w-full px-4 py-2 rounded-md contact-input" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary px-6 py-3 rounded-md en-content">Send Message</button>
+                            <button type="submit" class="btn-primary px-6 py-3 rounded-md fa-content hidden">ارسال پیام</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="terminal">
+                        <div class="terminal-content">
+                            <p class="code-comment en-content">// Connect with me</p>
+                            <p class="code-comment fa-content hidden">// با من در ارتباط باشید</p>
+                            
+                            <div class="mt-6 space-y-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope text-primary w-8"></i>
+                                    <span>clonera225@icloud.com</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-primary w-8"></i>
+                                    <span class="en-content">Mazandaran, Iran</span>
+                                    <span class="fa-content hidden">مازندران، ایران</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-university text-primary w-8"></i>
+                                    <span class="en-content">University of Science and Technology of Mazandaran</span>
+                                    <span class="fa-content hidden">دانشگاه علوم فنون مازندران</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-briefcase text-primary w-8"></i>
+                                    <span class="en-content">Nikan Programming Institute</span>
+                                    <span class="fa-content hidden">موسسه برنامه‌نویسی نیکان</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <p class="mb-4 en-content">Find me on social media:</p>
+                                <p class="mb-4 fa-content hidden">من را در شبکه‌های اجتماعی پیدا کنید:</p>
+                                <div class="flex space-x-4">
+                                    <a href="https://github.com/shayan-clo1" target="_blank" class="social-icon text-2xl"><i class="fab fa-github"></i></a>
+                                    <a href="https://instagram.com/shaayan.alinezhad" target="_blank" class="social-icon text-2xl"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://t.me/cloner32" target="_blank" class="social-icon text-2xl"><i class="fab fa-telegram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="en-content">&copy; 2025 Shayan Alinezhad. All rights reserved.</p>
+                    <p class="fa-content hidden">&copy; ۲۰۲۵ شایان علی‌نژاد. تمامی حقوق محفوظ است.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#home" class="text-gray-400 hover:text-primary transition-colors">
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="visit-counter" class="text-center text-sm text-gray-500 mt-4">
+  در حال بارگذاری آمار بازدید امروز...
+        </div>
+
+    </footer>
+
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+        })();
+        
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Initialize skill bars animation
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+            
+            // Create light mode geometric pattern
+            createLightModePattern();
+            
+            // Matrix background effect
+            const canvas = document.getElementById('matrix');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+            const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const nums = '0123456789';
+            const code = '{}[]()<>?/\\|~!@#$%^&*-+=';
+            
+            const alphabet = katakana + latin + nums + code;
+            
+            const fontSize = 16;
+            const columns = canvas.width / fontSize;
+            
+            const rainDrops = [];
+            
+            for (let x = 0; x < columns; x++) {
+                rainDrops[x] = 1;
+            }
+            
+            const draw = () => {
+                // Only draw matrix effect in dark mode
+                if (document.documentElement.classList.contains('dark')) {
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    ctx.fillStyle = '#0f0';
+                    ctx.font = fontSize + 'px monospace';
+                    
+                    for (let i = 0; i < rainDrops.length; i++) {
+                        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                        
+                        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                            rainDrops[i] = 0;
+                        }
+                        rainDrops[i]++;
+                    }
+                } else {
+                    // Clear canvas in light mode
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            };
+            
+            // Set interval for matrix animation
+            const matrixInterval = setInterval(draw, 30);
+            
+            // Create light mode geometric pattern
+            function createLightModePattern() {
+                const patternContainer = document.querySelector('.light-pattern');
+                
+                // Create SVG for light mode pattern
+                const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.setAttribute("width", "100%");
+                svg.setAttribute("height", "100%");
+                svg.style.position = "absolute";
+                svg.style.top = "0";
+                svg.style.left = "0";
+                svg.style.zIndex = "-1";
+                
+                // Create pattern definitions
+                const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+                
+                // Create pattern
+                const pattern = document.createElementNS("http://www.w3.org/2000/svg", "pattern");
+                pattern.setAttribute("id", "lightPattern");
+                pattern.setAttribute("width", "60");
+                pattern.setAttribute("height", "60");
+                pattern.setAttribute("patternUnits", "userSpaceOnUse");
+                
+                // Create pattern elements
+                for (let i = 0; i < 3; i++) {
+                    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                    circle.setAttribute("cx", 10 + (i * 20));
+                    circle.setAttribute("cy", 10);
+                    circle.setAttribute("r", 1);
+                    circle.setAttribute("fill", "rgba(8, 145, 178, 0.2)");
+                    pattern.appendChild(circle);
+                }
+                
+                for (let i = 0; i < 3; i++) {
+                    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                    circle.setAttribute("cx", 10 + (i * 20));
+                    circle.setAttribute("cy", 30);
+                    circle.setAttribute("r", 1);
+                    circle.setAttribute("fill", "rgba(8, 145, 178, 0.2)");
+                    pattern.appendChild(circle);
+                }
+                
+                for (let i = 0; i < 3; i++) {
+                    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                    circle.setAttribute("cx", 10 + (i * 20));
+                    circle.setAttribute("cy", 50);
+                    circle.setAttribute("r", 1);
+                    circle.setAttribute("fill", "rgba(8, 145, 178, 0.2)");
+                    pattern.appendChild(circle);
+                }
+                
+                // Add pattern to defs
+                defs.appendChild(pattern);
+                svg.appendChild(defs);
+                
+                // Create rectangle with pattern
+                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("width", "100%");
+                rect.setAttribute("height", "100%");
+                rect.setAttribute("fill", "url(#lightPattern)");
+                svg.appendChild(rect);
+                
+                // Add SVG to pattern container
+                patternContainer.appendChild(svg);
+            }
+            
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Language toggle
+            const languageToggle = document.getElementById('languageToggle');
+            const mobileLanguageToggle = document.getElementById('mobileLanguageToggle');
+            const enContent = document.querySelectorAll('.en-content');
+            const faContent = document.querySelectorAll('.fa-content');
+            
+            function toggleLanguage() {
+                document.body.classList.toggle('farsi');
+                languageToggle.classList.toggle('active');
+                mobileLanguageToggle.classList.toggle('active');
+                
+                enContent.forEach(el => el.classList.toggle('hidden'));
+                faContent.forEach(el => el.classList.toggle('hidden'));
+            }
+            
+            languageToggle.addEventListener('click', toggleLanguage);
+            mobileLanguageToggle.addEventListener('click', toggleLanguage);
+            
+            // Theme toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+            const htmlElement = document.documentElement;
+            
+            // Check for saved theme preference or use system preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                htmlElement.classList.remove('dark', 'light');
+                htmlElement.classList.add(savedTheme);
+                updateThemeSpecificElements();
+            } else {
+                // Use system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    htmlElement.classList.remove('light');
+                    htmlElement.classList.add('dark');
+                    updateThemeSpecificElements();
+                }
+            }
+            
+            function toggleTheme() {
+                if (htmlElement.classList.contains('dark')) {
+                    htmlElement.classList.remove('dark');
+                    htmlElement.classList.add('light');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    htmlElement.classList.remove('light');
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+                
+                updateThemeSpecificElements();
+            }
+            
+            themeToggle.addEventListener('click', toggleTheme);
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+            
+            // Update theme-specific elements
+            function updateThemeSpecificElements() {
+                // Update project card tags background
+                const tagElements = document.querySelectorAll('.project-card .bg-gray-800, .project-card .tag-bg');
+                
+                if (htmlElement.classList.contains('light')) {
+                    tagElements.forEach(tag => {
+                        tag.classList.remove('bg-gray-800');
+                        tag.classList.add('tag-bg');
+                    });
+                } else {
+                    tagElements.forEach(tag => {
+                        tag.classList.remove('tag-bg');
+                        tag.classList.add('bg-gray-800');
+                    });
+                }
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+            
+            // Handle form submission with EmailJS
+            const contactForm = document.getElementById('contactForm');
+            const successAlert = document.getElementById('successAlert');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const nameInput = contactForm.querySelector('input[name="name"]');
+                const emailInput = contactForm.querySelector('input[name="email"]');
+                const messageInput = contactForm.querySelector('textarea[name="message"]');
+                
+                // Prepare template parameters
+                const templateParams = {
+                    from_name: nameInput.value,
+                    from_email: emailInput.value,
+                    message: messageInput.value,
+                    to_email: 'clonera225@icloud.com'
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('default_service', 'template_id', templateParams)
+                    .then(function() {
+                        // Show success message
+                        successAlert.classList.add('show');
+                        
+                        // Clear form
+                        nameInput.value = '';
+                        emailInput.value = '';
+                        messageInput.value = '';
+                        
+                        // Hide success message after 3 seconds
+                        setTimeout(() => {
+                            successAlert.classList.remove('show');
+                        }, 3000);
+                    }, function(error) {
+                        console.error('Email sending failed:', error);
+                        alert('Failed to send message. Please try again later.');
+                    });
+            });
+            
+            // Handle window resize for matrix canvas
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964ac9a3928a8e66',t:'MTc1MzQzNzM4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();const counterElement = document.getElementById('visit-counter');
+const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+
+// کلید منحصربه‌فرد برای سایتت (میتونی هر چیزی بزاری)
+const siteKey = 'shayan-cloner-ir'; 
+
+// مسیر مخصوص امروز
+const counterKey = `visits-${siteKey}-${today}`;
+
+// چک کن آیا امروز قبلاً شمارش شده؟
+fetch(`https://api.countapi.xyz/get/${siteKey}/${counterKey}`)
+  .then(res => res.json())
+  .then(data => {
+    if (data.value === 0) {
+      // اگر وجود نداشت، بساز و مقدار رو 1 کن
+      fetch(`https://api.countapi.xyz/create?namespace=${siteKey}&key=${counterKey}&value=1`)
+        .then(() => {
+          counterElement.textContent = `تعداد بازدید امروز: 1`;
+        });
+    } else {
+      // اگر وجود داشت، مقدار رو +1 کن
+      fetch(`https://api.countapi.xyz/hit/${siteKey}/${counterKey}`)
+        .then(res => res.json())
+        .then(data => {
+          counterElement.textContent = `تعداد بازدید امروز: ${data.value}`;
+        });
+    }
+  })
+  .catch(() => {
+    counterElement.textContent = 'خطا در دریافت آمار بازدید 😞';
+  });
+</script></body>
+</html>
