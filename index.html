@@ -934,7 +934,7 @@
                         </p>
                         <p class="fa-content hidden">
                             <span class="text-green-400">$</span> cat about_me.txt<br>
-                            <span class="cursor">من شایان علی‌نژاد، یک مدرس برنامه‌نویسی با اشتیاق از مازندران، ایران هستم. در حال حاضر در رشته علوم کامپیوتر در ددانشگاه علوم فنون مازندران تحصیل می‌کنم و در موسسه برنامه‌نویسی نیکان تدریس می‌کنم. تدریس تمرکز و حرفه اصلی من است - من عاشق کمک به دانشجویان برای درک مفاهیم برنامه‌نویسی و توسعه مهارت‌های آنها هستم.</span>
+                            <span class="cursor">من شایان علی‌نژاد، یک مدرس برنامه‌نویسی با اشتیاق از مازندران، ایران هستم. در حال حاضر در رشته علوم کامپیوتر تحصیل  و در موسسه برنامه‌نویسی نیکان تدریس می‌کنم. تدریس تمرکز و حرفه اصلی من است - من عاشق کمک به دانشجویان برای درک مفاهیم برنامه‌نویسی و توسعه مهارت‌های آنها هستم.</span>
                         </p>
                         
                         <p class="en-content">
@@ -943,7 +943,7 @@
                         </p>
                         <p class="fa-content hidden">
                             <span class="text-green-400">$</span> ls education/<br>
-                            <span class="text-blue-400">کارشناسی_علوم_کامپیوتر.md</span> - دانشگاه علوم فنون مازندران
+                            <span class="text-blue-400">کارشناسی_علوم_کامپیوتر.md</span>
                         </p>
                         
                         <p class="en-content">
@@ -1161,11 +1161,7 @@
                                     <span class="en-content">Mazandaran, Iran</span>
                                     <span class="fa-content hidden">مازندران، ایران</span>
                                 </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-university text-primary w-8"></i>
-                                    <span class="en-content">University of Science and Technology of Mazandaran</span>
-                                    <span class="fa-content hidden">دانشگاه علوم فنون مازندران</span>
-                                </div>
+
                                 <div class="flex items-center">
                                     <i class="fas fa-briefcase text-primary w-8"></i>
                                     <span class="en-content">Nikan Programming Institute</span>
@@ -1504,35 +1500,6 @@
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964ac9a3928a8e66',t:'MTc1MzQzNzM4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();const counterElement = document.getElementById('visit-counter');
-const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
-// کلید منحصربه‌فرد برای سایتت (میتونی هر چیزی بزاری)
-const siteKey = 'shayan-cloner-ir'; 
-
-// مسیر مخصوص امروز
-const counterKey = `visits-${siteKey}-${today}`;
-
-// چک کن آیا امروز قبلاً شمارش شده؟
-fetch(`https://api.countapi.xyz/get/${siteKey}/${counterKey}`)
-  .then(res => res.json())
-  .then(data => {
-    if (data.value === 0) {
-      // اگر وجود نداشت، بساز و مقدار رو 1 کن
-      fetch(`https://api.countapi.xyz/create?namespace=${siteKey}&key=${counterKey}&value=1`)
-        .then(() => {
-          counterElement.textContent = `تعداد بازدید امروز: 1`;
-        });
-    } else {
-      // اگر وجود داشت، مقدار رو +1 کن
-      fetch(`https://api.countapi.xyz/hit/${siteKey}/${counterKey}`)
-        .then(res => res.json())
-        .then(data => {
-          counterElement.textContent = `تعداد بازدید امروز: ${data.value}`;
-        });
-    }
-  })
-  .catch(() => {
-    counterElement.textContent = 'خطا در دریافت آمار بازدید ';
-  });
 </script></body>
 </html>
