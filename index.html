@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Shayan Alinezhad | Developer & Instructor</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Fira+Code:wght@300;400;500;600&display=swap');
@@ -260,19 +262,6 @@
                 width: 100%;
             }
         }
-        .terminal-text::after {
-  content: '_'; /* یا می‌تونی بذاری '█' برای حس واقعی‌تر */
-  animation: blink-caret 0.7s step-end infinite;
-  margin-left: 5px;
-}
-
-@keyframes blink-caret {
-  from, to { opacity: 0; }
-  50% { opacity: 1; }
-}
-
-
-
     </style>
 </head>
 <body>
@@ -284,10 +273,9 @@
     <!-- Navigation -->
     <nav id="navbar" class="py-4 px-6 flex justify-between items-center sticky-nav">
         <div class="flex items-center">
-            <span class="text-2xl font-bold gradient-text terminal-text">
-    Cloner.dev
-</span>
-
+            <span class="text-2xl font-bold gradient-text">
+                Shayan.dev
+            </span>
         </div>
         
         <div class="hidden md:flex items-center space-x-6">
@@ -328,22 +316,22 @@
     <section id="home" class="min-h-screen flex items-center justify-center px-4 pt-20 md:pt-0">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="text-center md:text-left rtl:text-right rtl:md:text-right">
+                <div class="text-center md:text-left">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                        <span class="gradient-text" id="hero-name-en">Shayan Alinezhad</span>
+                        <span class="gradient-text" id="hero-name-en"data-aos="fade-up"data-aos-delay="300">Shayan Alinezhad</span>
                         <span class="gradient-text hidden" id="hero-name-fa">شایان علی‌نژاد</span>
                     </h1>
-                    <h2 class="text-xl md:text-2xl font-medium text-gray-600 mb-6">
+                    <h2 class="text-xl md:text-2xl font-medium text-gray-600 mb-6"data-aos="zoom-in">
                         <span id="hero-text-en">Developer & Programming Instructor</span>
                         <span id="hero-text-fa" class="hidden">توسعه دهنده و مدرس برنامه نویسی</span>
                     </h2>
-                    <p class="text-gray-500 mb-8 max-w-lg mx-auto md:mx-0" id="location-en">
+                    <p class="text-gray-500 mb-8 max-w-lg mx-auto md:mx-0" id="location-en"data-aos="fade-up">
                         Passionate about teaching and creating innovative solutions based in Mazandaran, Iran
                     </p>
-                    <p class="text-gray-500 mb-8 max-w-lg mx-auto md:mx-0 hidden" id="location-fa">
+                    <p class="text-gray-500 mb-8 max-w-lg mx-auto md:mx-0 hidden" id="location-fa"data-aos="fade-up">
                         مشتاق تدریس و ایجاد راه‌حل‌های نوآورانه، مستقر در مازندران، ایران
                     </p>
-                        <div class="flex flex-wrap justify-center md:justify-center gap-4 mt-6">
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
                         <a href="#contact" class="btn">
                             <span id="contact-btn-en">Contact Me</span>
                             <span id="contact-btn-fa" class="hidden">تماس با من</span>
@@ -391,21 +379,21 @@
     </section>
     
     <!-- About Section -->
-    <section id="about" class="py-16 px-4">
+    <section id="about" class="py-16 px-4"data-aos="fade-up" data-aos-delay="100">
         <div class="container mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                    <span class="gradient-text" id="about-title-en">About Me</span>
-                    <span class="gradient-text hidden" id="about-title-fa">درباره من</span>
+                    <span class="gradient-text" id="about-title-en" data-aos="fade-up" >About Me</span>
+                    <span class="gradient-text hidden" id="about-title-fa"data-aos="fade-up" data-aos-delay="100">درباره من </span>
                 </h2>
                 <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"data-aos="fade-up" data-aos-delay="100">
                 <div>
-                    <div class="card p-6 shadow-lg">
+                    <div class="card p-6 shadow-lg"data-aos="slide-right" data-aos-delay="100" data-aos-duration="800" >
                         <h3 class="text-xl font-bold mb-4 text-gray-800">
-                            <span id="personal-title-en">Personal Info</span>
+                            <span id="personal-title-en"data-aos="fade-up" data-aos-delay="300">Personal Info</span>
                             <span id="personal-title-fa" class="hidden">اطلاعات شخصی</span>
                         </h3>
                         
@@ -452,8 +440,8 @@
                         </div>
                         <div id="education-content-en">
                             <p class="text-gray-600 font-medium">BSc in Computer Science</p>
-                            <p class="text-gray-500 text-sm">University of Science and Technology </p>
-                            <p class="text-gray-400 text-sm mt-2">2021 - Present</p>
+                            <p class="text-gray-500 text-sm">University of Science and Technology of Babol</p>
+                            <p class="text-gray-400 text-sm mt-2">2020 - Present</p>
                         </div>
                         <div id="education-content-fa" class="hidden">
                             <p class="text-gray-600 font-medium">کارشناسی علوم کامپیوتر</p>
@@ -657,7 +645,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6"data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                         <h3 class="text-xl font-bold mb-2 text-gray-800">
                             <span id="course1-title-en">Python Programming Fundamentals</span>
                             <span id="course1-title-fa" class="hidden">مبانی برنامه‌نویسی پایتون</span>
@@ -676,8 +664,8 @@
                                 <span class="text-gray-600 ml-1">5.0</span>
                             </div>
                             <span class="text-gray-600">
-                                <span id="course1-students-en">120 Students</span>
-                                <span id="course1-students-fa" class="hidden">۱۲۰ دانشجو</span>
+                                <span id="course1-students-en">69 Students</span>
+                                <span id="course1-students-fa" class="hidden">69 دانشجو</span>
                             </span>
                         </div>
                     </div>
@@ -690,7 +678,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6"data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                         <h3 class="text-xl font-bold mb-2 text-gray-800">
                             <span id="course2-title-en">Web Development with Django</span>
                             <span id="course2-title-fa" class="hidden">توسعه وب با جنگو</span>
@@ -709,8 +697,8 @@
                                 <span class="text-gray-600 ml-1">4.8</span>
                             </div>
                             <span class="text-gray-600">
-                                <span id="course2-students-en">85 Students</span>
-                                <span id="course2-students-fa" class="hidden">۸۵ دانشجو</span>
+                                <span id="course2-students-en">21 Students</span>
+                                <span id="course2-students-fa" class="hidden">21 دانشجو</span>
                             </span>
                         </div>
                     </div>
@@ -723,7 +711,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6"data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                         <h3 class="text-xl font-bold mb-2 text-gray-800">
                             <span id="course3-title-en">C# Programming Masterclass</span>
                             <span id="course3-title-fa" class="hidden">دوره جامع برنامه‌نویسی سی‌شارپ</span>
@@ -742,8 +730,8 @@
                                 <span class="text-gray-600 ml-1">4.9</span>
                             </div>
                             <span class="text-gray-600">
-                                <span id="course3-students-en">95 Students</span>
-                                <span id="course3-students-fa" class="hidden">۹۵ دانشجو</span>
+                                <span id="course3-students-en">41 Students</span>
+                                <span id="course3-students-fa" class="hidden">41 دانشجو</span>
                             </span>
                         </div>
                     </div>
@@ -1090,5 +1078,21 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9652d7ca67152c57',t:'MTc1MzUyMTg1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9652d7ca67152c57',t:'MTc1MzUyMTg1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+  // اعمال انیمیشن به تمام سکشن‌ها
+  document.querySelectorAll('section').forEach((el, index) => {
+    el.setAttribute('data-aos', 'fade-up');
+    el.setAttribute('data-aos-delay', index * 100); // برای اختلاف زمانی بین بخش‌ها
+  });
+
+  AOS.init({
+    once: true // فقط یک‌بار انیمیشن اجرا شود
+  });
+</script>
+
+</body>
 </html>
