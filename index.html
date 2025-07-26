@@ -261,6 +261,15 @@
             .card {
                 width: 100%;
             }
+            .card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
         }
     </style>
 </head>
@@ -343,7 +352,8 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="card p-6 shadow-lg">
+                    <div class="card p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl
+">
                         <div class="bg-gray-800 text-white p-4 rounded-t-lg">
                             <div class="flex items-center">
                                 <div class="flex space-x-2">
@@ -351,7 +361,7 @@
                                     <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
                                 </div>
-                                <div class="ml-4 text-sm">Terminal</div>
+                                <div class="ml-4 text-sm transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl" >Terminal</div>
                             </div>
                         </div>
                         <div class="bg-gray-900 text-green-400 p-4 font-mono text-sm rounded-b-lg">
@@ -391,7 +401,8 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"data-aos="fade-up" data-aos-delay="100">
                 <div>
-                    <div class="card p-6 shadow-lg"data-aos="slide-right" data-aos-delay="100" data-aos-duration="800" >
+                    <div class="card p-6 shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl
+"data-aos="slide-right" data-aos-delay="100" data-aos-duration="800"  >
                         <h3 class="text-xl font-bold mb-4 text-gray-800">
                             <span id="personal-title-en"data-aos="fade-up" data-aos-delay="300">Personal Info</span>
                             <span id="personal-title-fa" class="hidden">اطلاعات شخصی</span>
@@ -402,7 +413,7 @@
                                 Hello, I'm Shayan Alinezhad, also known as Cloner. I'm a passionate full-stack developer and programming instructor from Mazandaran, Iran.
                             </p>
                             <p>
-                                Currently studying Computer Science at the University of Science and Technology of Babol, I focus on creating innovative solutions and sharing knowledge with others.
+                                Currently studying Computer Science , I focus on creating innovative solutions and sharing knowledge with others.
                             </p>
                             <p>
                                 Teaching is my main focus and profession at Nikan Programming Institute, where I help students master programming skills.
@@ -411,10 +422,10 @@
                         
                         <div class="space-y-3 text-gray-600 hidden" id="about-content-fa">
                             <p>
-                                سلام، من شایان علی‌نژاد هستم، معروف به کلونر. من یک توسعه‌دهنده فول‌استک و مدرس برنامه‌نویسی از مازندران، ایران هستم.
+                                سلام، من شایان علی‌نژاد یک توسعه‌دهنده فول‌استک و مدرس برنامه‌نویسی از مازندران، ایران هستم.
                             </p>
                             <p>
-                                در حال حاضر در رشته علوم کامپیوتر در دانشگاه علم و فناوری بابل تحصیل می‌کنم و بر ایجاد راه‌حل‌های نوآورانه و به اشتراک‌گذاری دانش با دیگران تمرکز دارم.
+                                در حال حاضر در رشته علوم کامپیوتر  تحصیل می‌کنم و بر ایجاد راه‌حل‌های نوآورانه و به اشتراک‌گذاری دانش با دیگران تمرکز دارم.
                             </p>
                             <p>
                                 تدریس، تمرکز و حرفه اصلی من در موسسه برنامه‌نویسی نیکان است، جایی که به دانشجویان کمک می‌کنم تا مهارت‌های برنامه‌نویسی را به خوبی فرا بگیرند.
@@ -424,7 +435,7 @@
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="card p-4 shadow-md">
+                    <div class="card p-4 shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
                         <div class="flex items-center mb-3">
                             <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-500 mr-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -435,22 +446,20 @@
                             </div>
                             <h3 class="font-bold text-gray-800">
                                 <span id="education-title-en">Education</span>
-                                <span id="education-title-fa" class="hidden">تحصیلات</span>
+                                <span id="education-title-fa" class="hidden">تحصیلات   </span>
                             </h3>
                         </div>
                         <div id="education-content-en">
                             <p class="text-gray-600 font-medium">BSc in Computer Science</p>
-                            <p class="text-gray-500 text-sm">University of Science and Technology of Babol</p>
-                            <p class="text-gray-400 text-sm mt-2">2020 - Present</p>
+                            <p class="text-gray-400 text-sm mt-2">2022 - Present</p>
                         </div>
                         <div id="education-content-fa" class="hidden">
                             <p class="text-gray-600 font-medium">کارشناسی علوم کامپیوتر</p>
-                            <p class="text-gray-500 text-sm">دانشگاه علم و فناوری بابل</p>
-                            <p class="text-gray-400 text-sm mt-2">۱۳۹۹ - تاکنون</p>
+                            <p class="text-gray-400 text-sm mt-2">1401 - تاکنون</p>
                         </div>
                     </div>
                     
-                    <div class="card p-4 shadow-md">
+                    <div class="card p-4 shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
                         <div class="flex items-center mb-3">
                             <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 mr-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -465,16 +474,16 @@
                         <div id="experience-content-en">
                             <p class="text-gray-600 font-medium">Programming Instructor</p>
                             <p class="text-gray-500 text-sm">Nikan Programming Institute</p>
-                            <p class="text-gray-400 text-sm mt-2">2019 - Present</p>
+                            <p class="text-gray-400 text-sm mt-2">2024 - Present</p>
                         </div>
                         <div id="experience-content-fa" class="hidden">
                             <p class="text-gray-600 font-medium">مدرس برنامه‌نویسی</p>
                             <p class="text-gray-500 text-sm">موسسه برنامه‌نویسی نیکان</p>
-                            <p class="text-gray-400 text-sm mt-2">۱۳۹۸ - تاکنون</p>
+                            <p class="text-gray-400 text-sm mt-2">1403 - تاکنون</p>
                         </div>
                     </div>
                     
-                    <div class="card p-4 shadow-md">
+                    <div class="card p-4 shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
                         <div class="flex items-center mb-3">
                             <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -496,7 +505,7 @@
                         </div>
                     </div>
                     
-                    <div class="card p-4 shadow-md">
+                    <div class="card p-4 shadow-md transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
                         <div class="flex items-center mb-3">
                             <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mr-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -509,11 +518,11 @@
                             </h3>
                         </div>
                         <div id="interests-content-en">
-                            <p class="text-gray-600">Teaching, AI, Open Source</p>
+                            <p class="text-gray-600">Teaching, AI </p>
                             <p class="text-gray-500 text-sm mt-2">Continuous Learning</p>
                         </div>
                         <div id="interests-content-fa" class="hidden">
-                            <p class="text-gray-600">تدریس، هوش مصنوعی، متن‌باز</p>
+                            <p class="text-gray-600"> تدریس،هوش مصنوعی </p>
                             <p class="text-gray-500 text-sm mt-2">یادگیری مداوم</p>
                         </div>
                     </div>
@@ -524,7 +533,7 @@
     
     <!-- Skills Section -->
     <section id="skills" class="py-16 px-4 bg-gray-50">
-        <div class="container mx-auto">
+        <div class="container mx-auto  ">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">
                     <span class="gradient-text" id="skills-title-en">Technical Skills</span>
@@ -533,7 +542,8 @@
                 <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
             </div>
             
-            <div class="card p-6 shadow-lg max-w-3xl mx-auto">
+            <div class="card p-6 shadow-lg max-w-3xl mx-auto transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl
+">
                 <h3 class="text-xl font-bold mb-6 text-gray-800">
                     <span id="programming-title-en">Programming Languages</span>
                     <span id="programming-title-fa" class="hidden">زبان‌های برنامه‌نویسی</span>
@@ -551,27 +561,27 @@
                 
                 <div class="mb-6">
                     <div class="flex justify-between mb-2">
-                        <span class="font-medium text-gray-700">C#</span>
-                        <span class="text-indigo-500">65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="65%"></div>
-                    </div>
-                </div>
-                
-                <div class="mb-6">
-                    <div class="flex justify-between mb-2">
-                        <span class="font-medium text-gray-700">JavaScript</span>
-                        <span class="text-indigo-500">60%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-width="60%"></div>
-                    </div>
-                </div>
-                
-                <div class="mb-6">
-                    <div class="flex justify-between mb-2">
                         <span class="font-medium text-gray-700">HTML/CSS</span>
+                        <span class="text-indigo-500">78%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="78%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium text-gray-700">C#</span>
+                        <span class="text-indigo-500">61.7%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="61.7%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium text-gray-700">JS</span>
                         <span class="text-indigo-500">55%</span>
                     </div>
                     <div class="skill-bar">
@@ -581,25 +591,25 @@
             </div>
             
             <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div class="card p-4 flex flex-col items-center justify-center">
+                <div class="card p-4 flex flex-col items-center justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-blue-500">
-                            <path fill="currentColor" d="M12,1.85C11.73,1.85 11.45,1.92 11.22,2.05L3.78,6.35C3.3,6.63 3,7.15 3,7.71V16.29C3,16.85 3.3,17.37 3.78,17.65L5.73,18.77C6.68,19.23 7,19.24 7.44,19.24C8.84,19.24 9.65,18.39 9.65,16.91V8.44C9.65,8.32 9.55,8.22 9.43,8.22H8.5C8.37,8.22 8.27,8.32 8.27,8.44V16.91C8.27,17.57 7.59,18.22 6.5,17.67L4.45,16.5C4.38,16.45 4.34,16.37 4.34,16.29V7.71C4.34,7.62 4.38,7.54 4.45,7.5L11.89,3.21C11.95,3.17 12.05,3.17 12.11,3.21L19.55,7.5C19.62,7.54 19.66,7.62 19.66,7.71V16.29C19.66,16.37 19.62,16.45 19.55,16.5L12.11,20.79C12.05,20.83 11.95,20.83 11.89,20.79L10,19.65C9.92,19.62 9.84,19.61 9.79,19.64C9.26,19.94 9.16,20 8.67,20.15C8.55,20.19 8.36,20.26 8.74,20.47L11.22,21.94C11.46,22.08 11.72,22.15 12,22.15C12.28,22.15 12.54,22.08 12.78,21.94L20.22,17.65C20.7,17.37 21,16.85 21,16.29V7.71C21,7.15 20.7,6.63 20.22,6.35L12.78,2.05C12.55,1.92 12.28,1.85 12,1.85M14,8C11.88,8 10.61,8.89 10.61,10.39C10.61,12 11.87,12.47 13.91,12.67C16.34,12.91 16.53,13.27 16.53,13.75C16.53,14.58 15.86,14.93 14.3,14.93C12.32,14.93 11.9,14.44 11.75,13.46C11.73,13.36 11.64,13.28 11.53,13.28H10.57C10.45,13.28 10.36,13.37 10.36,13.5C10.36,14.74 11.04,16.24 14.3,16.24C16.65,16.24 18,15.31 18,13.69C18,12.08 16.92,11.66 14.63,11.35C12.32,11.05 12.09,10.89 12.09,10.35C12.09,9.9 12.29,9.3 14,9.3C15.5,9.3 16.09,9.63 16.32,10.66C16.34,10.76 16.43,10.83 16.53,10.83H17.5C17.55,10.83 17.61,10.81 17.65,10.76C17.69,10.72 17.72,10.66 17.7,10.6C17.56,8.82 16.38,8 14,8Z" />
+                            <path fill="currentColor" d="M12,1.85C11.73,1.85 11.45,1.92 11.22,2.05L3.78,6.35C3.3,6.63 3,7.15 3,7.71V16.29C3,16.85 3.3,17.37 3.78,17.65L5.73,18.77C6.68,19.23 7,19.24 7.44,19.24C8.84,19.24 9.65,18.39 9.65,16.91V8.44C9.65,8.32 9.55,8.22 9.43,8.22H8.5C8.37,8.22 8.27,8.32 8.27,8.44V16.91C8.27,17.57 7.59,18.22 6.5,17.67L4.45,16.5C4.38,16.45 4.34,16.37 4.34,16.29V7.71C4.34,7.62 4.38,7.54 4.45,7.5L11.89,3.21C11.95,3.17 12.05,3.17 12.11,3.21L19.55,7.5C19.62,7.54 19.66,7.62 19.66,7.71V16.29C19.66,16.37 19.62,16.45 19.55,16.5L12.11,20.79C12.05,20.83 11.95,20.83 11.89,20.79L10,19.65C9.92,19.62 9.84,19.61 9.79,19.64C9.26,19.94 9.16,20 8.67,20.15C8.55,20.19 8.36,20.26 8.74,20.47L11.22,21.94C11.46,22.08 11.72,22.15 12,22.15C12.28,22.15 12.54,22.08 12.78,21.94L20.22,17.65C20.7,17.37 21,16.85 21,16.29V7.71C21,7.15 20.7,6.63 20.22,6.35L12.78,2.05C12.55,1.92 12.28,1.85 12,1.85M14,8C11.88,8 10.61,8.89 10.61,10.39C10.61,12 11.87,12.47 13.91,12.67C16.34,12.91 16.53,13.27 16.53,13.75C16.53,14.58 15.86,14.93 14.3,14.93C12.32,14.93 11.9,14.44 11.75,13.46C11.73,13.36 11.64,13.28 11.53,13.28H10.57C10.45,13.28 10.36,13.37 10.36,13.5C10.36,14.74 11.04,16.24 14.3,16.24C16.65,16.24 18,15.31 18,13.69C18,12.08 16.92,11.66 14.63,11.35C12.32,11.05 12.09,10.89 12.09,10.35C12.09,9.9 12.29,9.3 14,9.3C15.5,9.3 16.09,9.63 16.32,10.66C16.34,10.76 16.43,10.83 16.53,10.83H17.5C17.55,10.83 17.61,10.81 17.65,10.76C17.69,10.72 17.72,10.66 S17.7,10.6C17.56,8.82 16.38,8 14,8Z" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-gray-800">Python</h4>
+                    <h4 class="font-bold text-gray-800 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">JS</h4>
                 </div>
                 
-                <div class="card p-4 flex flex-col items-center justify-center">
+                <div class="card p-4 flex flex-col items-center justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-green-500">
                             <path fill="currentColor" d="M11.19,1.36L4.19,4.47C3.47,4.79 3,5.51 3,6.3V17.7C3,18.49 3.47,19.21 4.19,19.53L11.19,22.64C11.71,22.88 12.29,22.88 12.81,22.64L19.81,19.53C20.53,19.21 21,18.49 21,17.7V6.3C21,5.51 20.53,4.79 19.81,4.47L12.81,1.36C12.29,1.13 11.71,1.13 11.19,1.36M12,3.19L17.75,5.73V8.73C17.75,10.54 16.71,12.24 15.05,13.04L12,14.47V3.19M5.75,7.48L10.5,5.48V15.8L8.75,16.67C7.06,17.5 5.75,15.5 5.75,14.07V7.48Z" />
                         </svg>
                     </div>
-                    <h4 class="font-bold text-gray-800">Django</h4>
+                    <h4 class="font-bold text-gray-800">Python</h4>
                 </div>
                 
-                <div class="card p-4 flex flex-col items-center justify-center">
+                <div class="card p-4 flex flex-col items-center justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-purple-500">
                             <path fill="currentColor" d="M9.931,12.645h4.138l-2.07-4.908m0-7.737L.68,3.982l1.726,14.771L12,24l9.596-5.242L23.32,3.984,11.999.001zm7.064,18.31h-2.638l-1.422-3.503H8.996l-1.422,3.503h-2.64L12,2.65z"/>
@@ -608,7 +618,7 @@
                     <h4 class="font-bold text-gray-800">C#</h4>
                 </div>
                 
-                <div class="card p-4 flex flex-col items-center justify-center">
+                <div class="card p-4 flex flex-col items-center justify-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
                     <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-yellow-500">
                             <path fill="currentColor" d="M12,17.56L16.07,16.43L16.62,10.33H9.38L9.2,8.3H16.8L17,6.31H7L7.56,12.32H14.45L14.22,14.9L12,15.5L9.78,14.9L9.64,13.24H7.64L7.93,16.43L12,17.56M4.07,3H19.93L18.5,19.2L12,21L5.5,19.2L4.07,3Z" />
@@ -717,10 +727,10 @@
                             <span id="course3-title-fa" class="hidden">دوره جامع برنامه‌نویسی سی‌شارپ</span>
                         </h3>
                         <p class="text-gray-600 mb-4" id="course3-desc-en">
-                            Master C# programming language and build desktop applications.
+                            Master C# programming language.
                         </p>
                         <p class="text-gray-600 mb-4 hidden" id="course3-desc-fa">
-                            تسلط بر زبان برنامه‌نویسی سی‌شارپ و ساخت برنامه‌های دسکتاپ.
+                            تسلط بر زبان برنامه‌نویسی سی‌شارپ 
                         </p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
@@ -884,7 +894,7 @@
                                     </svg>
                                 </a>
                                 <a href="https://t.me/cloner32" target="_blank" class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white hover:bg-blue-600 transition-all">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" viewBox="0 0 16 16">
                                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
                                     </svg>
                                 </a>
@@ -903,8 +913,8 @@
             <p class="mb-4" id="footer-text-en">Developer & Programming Instructor</p>
             <p class="mb-4 hidden" id="footer-text-fa">توسعه دهنده و مدرس برنامه نویسی</p>
             <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full mb-4"></div>
-            <p class="text-gray-400" id="copyright-en">&copy; 2023 Shayan Alinezhad. All rights reserved.</p>
-            <p class="text-gray-400 hidden" id="copyright-fa">&copy; ۱۴۰۲ شایان علی‌نژاد. تمامی حقوق محفوظ است.</p>
+            <p class="text-gray-400" id="copyright-en">&copy; 2025 Shayan Alinezhad. All rights reserved.</p>
+            <p class="text-gray-400 hidden" id="copyright-fa">&copy; 1404 شایان علی‌نژاد. تمامی حقوق محفوظ است.</p>
         </div>
     </footer>
     
