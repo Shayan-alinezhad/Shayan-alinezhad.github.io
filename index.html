@@ -41,6 +41,7 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
         }
         
         body[dir="rtl"] {
@@ -164,7 +165,7 @@
             top: 0;
             left: 0;
             width: 0;
-            transition: width 1.5s ease;
+            transition: width 1s ease;
             box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
         }
         
@@ -366,6 +367,11 @@
             
             .right {
                 left: 0%;
+            }
+            
+            /* Add more spacing to the hero section on mobile */
+            #home {
+                padding-top: 100px;
             }
         }
         
@@ -687,6 +693,18 @@
             right: auto;
             left: 30px;
         }
+        
+        /* Fix for RTL layout issues */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        [dir="rtl"] .container,
+        [dir="rtl"] .max-w-6xl,
+        [dir="rtl"] .max-w-2xl {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -746,11 +764,11 @@
     </div>
     
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden pt-20 md:pt-0">
         <div class="wave"></div>
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 mt-8 md:mt-0">
                     <span class="gradient-text neon-text" id="hero-name-en">Shayan Alinezhad</span>
                     <span class="gradient-text neon-text hidden" id="hero-name-fa">شایان علی‌نژاد</span>
                 </h1>
@@ -809,7 +827,7 @@
                                 <span class="terminal-command">cat about.txt</span>
                             </div>
                             <div class="terminal-output">
-                                <p>I'm a passionate developer and instructor from Iran.</p>
+                                <p>I'm a passionate developer and instructor from Mazandaran, Iran.</p>
                             </div>
                             
                             <div class="terminal-prompt">
@@ -868,7 +886,7 @@
                                     Hello, I'm Shayan Alinezhad, also known as Cloner. I'm a passionate full-stack developer and programming instructor from Mazandaran, Iran.
                                 </p>
                                 <p>
-                                    Currently studying Computer Science at the University of Science and Technology of Mazandaran , I focus on creating innovative solutions and sharing knowledge with others.
+                                    Currently studying Computer Science at the University of Science and Technology of Babol, I focus on creating innovative solutions and sharing knowledge with others.
                                 </p>
                                 <p>
                                     Teaching is my main focus and profession at Nikan Programming Institute, where I help students master programming skills.
@@ -880,7 +898,7 @@
                                     سلام، من شایان علی‌نژاد هستم، معروف به کلونر. من یک توسعه‌دهنده فول‌استک و مدرس برنامه‌نویسی از مازندران، ایران هستم.
                                 </p>
                                 <p>
-                                    در حال حاضر در رشته علوم کامپیوتر  تحصیل می‌کنم و بر ایجاد راه‌حل‌های نوآورانه و به اشتراک‌گذاری دانش با دیگران تمرکز دارم.
+                                    در حال حاضر در رشته علوم کامپیوتر در دانشگاه علم و فناوری بابل تحصیل می‌کنم و بر ایجاد راه‌حل‌های نوآورانه و به اشتراک‌گذاری دانش با دیگران تمرکز دارم.
                                 </p>
                                 <p>
                                     تدریس، تمرکز و حرفه اصلی من در موسسه برنامه‌نویسی نیکان است، جایی که به دانشجویان کمک می‌کنم تا مهارت‌های برنامه‌نویسی را به خوبی فرا بگیرند.
@@ -908,11 +926,12 @@
                         <div id="education-content-en">
                             <p class="text-gray-600 font-medium">BSc in Computer Science</p>
                             <p class="text-gray-500 text-sm">University of Science and Technology of Babol</p>
-                            <p class="text-gray-400 text-sm mt-2">2022 - Present</p>
+                            <p class="text-gray-400 text-sm mt-2">2020 - Present</p>
                         </div>
                         <div id="education-content-fa" class="hidden">
                             <p class="text-gray-600 font-medium">کارشناسی علوم کامپیوتر</p>
-                            <p class="text-gray-400 text-sm mt-2">1401 - تاکنون</p>
+                            <p class="text-gray-500 text-sm">دانشگاه علم و فناوری بابل</p>
+                            <p class="text-gray-400 text-sm mt-2">۱۳۹۹ - تاکنون</p>
                         </div>
                     </div>
                     
@@ -1407,8 +1426,8 @@
             <p class="mb-6" id="footer-text-en">Developer & Programming Instructor</p>
             <p class="mb-6 hidden" id="footer-text-fa">توسعه دهنده و مدرس برنامه نویسی</p>
             <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full mb-6"></div>
-            <p class="text-gray-400" id="copyright-en">&copy; 2025 Shayan Alinezhad. All rights reserved.</p>
-            <p class="text-gray-400 hidden" id="copyright-fa">&copy; 1404 شایان علی‌نژاد. تمامی حقوق محفوظ است.</p>
+            <p class="text-gray-400" id="copyright-en">&copy; 2023 Shayan Alinezhad. All rights reserved.</p>
+            <p class="text-gray-400 hidden" id="copyright-fa">&copy; ۱۴۰۲ شایان علی‌نژاد. تمامی حقوق محفوظ است.</p>
         </div>
     </footer>
     
@@ -1466,6 +1485,11 @@
                 document.getElementById('mobile-nav-courses').textContent = 'دوره‌ها';
                 document.getElementById('mobile-nav-contact').textContent = 'تماس';
             }
+            
+            // Fix layout issues when switching languages
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 100);
         }
         
         languageButton.addEventListener('click', toggleLanguage);
@@ -1553,7 +1577,7 @@
         // Start terminal animation
         setTimeout(typeCommand, 1000);
         
-        // Skill Bar Animation
+        // Skill Bar Animation - Faster animation
         function animateSkillBars() {
             const skillBars = document.querySelectorAll('.skill-progress');
             skillBars.forEach(bar => {
@@ -1562,26 +1586,25 @@
             });
         }
         
-        // Scroll Reveal Animation
+        // Scroll Reveal Animation - Faster animations
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize ScrollReveal
+            // Initialize ScrollReveal with faster animations
             const sr = ScrollReveal({
                 origin: 'bottom',
                 distance: '30px',
-                duration: 1000,
-                delay: 200,
+                duration: 600, // Reduced from 1000
+                delay: 100,    // Reduced from 200
                 easing: 'ease-in-out',
                 reset: false
             });
             
             // Reveal elements
-            sr.reveal('.card', { interval: 100 });
+            sr.reveal('.card', { interval: 50 }); // Reduced from 100
             sr.reveal('.section-title', { origin: 'top' });
-            sr.reveal('.skill-bar', { interval: 100 });
+            sr.reveal('.skill-bar', { interval: 50 }); // Reduced from 100
             sr.reveal('.terminal', { origin: 'right' });
             
-            // Animate skill bars when they come into view
-            const skillsSection = document.getElementById('skills');
+            // Animate skill bars when they come into view - with lower threshold
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1589,9 +1612,13 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            });
+            }, { threshold: 0.1 }); // Lower threshold for earlier triggering
             
+            const skillsSection = document.getElementById('skills');
             observer.observe(skillsSection);
+            
+            // Pre-load animations for faster response
+            setTimeout(animateSkillBars, 500);
         });
         
         // Particle Animation
@@ -1629,6 +1656,13 @@
         
         // Create particles
         createParticles();
+        
+        // Fix layout issues on window resize
+        window.addEventListener('resize', function() {
+            // Force recalculation of layout
+            document.body.style.width = '100%';
+            document.body.style.overflowX = 'hidden';
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964eb373d0c02bdc',t:'MTc1MzQ3ODQyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9652c1f473143a43',t:'MTc1MzUyMDk2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
