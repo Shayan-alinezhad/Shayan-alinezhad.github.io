@@ -1,66 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shayan Alinezhad | Developer & Instructor</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Fira+Code:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+        
         :root {
-            --transition-speed: 0.3s;
-        }
-        
-        .dark {
-            --primary: #00ff00;
-            --primary-dim: #00cc00;
-            --secondary: #0a0a0a;
-            --text: #e0e0e0;
-            --accent: #00cc00;
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --border: #333333;
-            --card-bg: #0a0a0a;
-            --footer-bg: #0a0a0a;
-            --terminal-bg: #0a0a0a;
-            --terminal-header: #121212;
-            --nav-bg: rgba(10, 10, 10, 0.8);
-            --section-alt-bg: rgba(0, 0, 0, 0.3);
-            --input-bg: #121212;
-            --font-family-base: 'Fira Code', monospace;
-            --font-family-code: 'Fira Code', monospace;
-            --skill-bg: #121212;
-            --tag-bg: #1a1a1a;
-            --tag-text: #e0e0e0;
-        }
-        
-        .light {
-            --primary: #0891b2;
-            --primary-dim: #0e7490;
-            --secondary: #ffffff;
-            --text: #334155;
-            --accent: #0891b2;
-            --dark: #f1f5f9;
-            --darker: #ffffff;
-            --border: #cbd5e1;
-            --card-bg: #ffffff;
-            --footer-bg: #f8fafc;
-            --terminal-bg: rgba(255, 255, 255, 0.85);
-            --terminal-header: #e2e8f0;
-            --nav-bg: rgba(255, 255, 255, 0.85);
-            --section-alt-bg: rgba(241, 245, 249, 0.8);
-            --input-bg: #ffffff;
-            --font-family-base: 'Inter', sans-serif;
-            --font-family-code: 'Fira Code', monospace;
-            --skill-bg: #e2e8f0;
-            --tag-bg: #e0f2fe;
-            --tag-text: #0369a1;
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --secondary: #f472b6;
+            --accent: #34d399;
+            --light: #f9fafb;
+            --dark: #1f2937;
+            --text: #4b5563;
+            --terminal-bg: #282c34;
+            --terminal-text: #abb2bf;
+            --terminal-green: #98c379;
+            --terminal-blue: #61afef;
+            --terminal-purple: #c678dd;
+            --terminal-red: #e06c75;
+            --terminal-yellow: #e5c07b;
         }
         
         * {
@@ -68,88 +33,597 @@
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
-            transition: background-color var(--transition-speed), 
-                        color var(--transition-speed), 
-                        border-color var(--transition-speed), 
-                        box-shadow var(--transition-speed),
-                        text-shadow var(--transition-speed),
-                        transform var(--transition-speed);
         }
         
         body {
-            font-family: var(--font-family-base);
-            background-color: var(--darker);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
         }
         
-        body.farsi {
+        body[dir="rtl"] {
             font-family: 'Vazirmatn', sans-serif;
-            direction: rtl;
         }
         
-        .terminal {
-            background-color: var(--terminal-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
+        .mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        .code {
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 5px rgba(99, 102, 241, 0.8), 
+                         0 0 10px rgba(99, 102, 241, 0.5), 
+                         0 0 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            font-family: var(--font-family-code);
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
             transition: all 0.3s ease;
         }
         
-        .light .terminal {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
         
-        .terminal::before {
-            content: "";
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e5e7eb;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 50px;
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
+            width: 0;
+            transition: width 1.5s ease;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+        
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            animation: shine 2s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .language-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
             height: 30px;
-            background-color: var(--terminal-header);
-            border-bottom: 1px solid var(--border);
-            border-radius: 6px 6px 0 0;
+        }
+        
+        .language-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .language-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 30px;
+        }
+        
+        .language-slider:before {
+            position: absolute;
+            content: "EN";
             display: flex;
             align-items: center;
-            padding: 0 10px;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            color: var(--primary);
+            transition: .4s;
+            border-radius: 50%;
         }
         
-        .terminal::after {
-            content: "● ● ●";
+        input:checked + .language-slider {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        input:checked + .language-slider:before {
+            transform: translateX(30px);
+            content: "FA";
+        }
+        
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 2rem 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
             position: absolute;
-            top: 8px;
-            left: 15px;
-            font-size: 12px;
-            color: #555;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
         }
         
-        .dark .terminal::after {
-            content: "● ● ●";
-            color: #555;
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
         }
         
-        .light .terminal::after {
-            content: "🔴 🟡 🟢";
-            color: #555;
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
         }
         
-        .terminal-content {
-            margin-top: 20px;
-            font-family: var(--font-family-code);
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+        
+        /* Animations */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            z-index: -1;
+        }
+        
+        .blob-1 {
+            top: 10%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background-color: var(--primary-light);
+            animation: blob-move-1 15s infinite alternate;
+        }
+        
+        .blob-2 {
+            bottom: 10%;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background-color: var(--secondary);
+            animation: blob-move-2 20s infinite alternate;
+        }
+        
+        .blob-3 {
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: var(--accent);
+            animation: blob-move-3 18s infinite alternate;
+        }
+        
+        @keyframes blob-move-1 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.2); }
+        }
+        
+        @keyframes blob-move-2 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-70px, -30px) scale(1.3); }
+        }
+        
+        @keyframes blob-move-3 {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, -50px) scale(1.1); }
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .circle-decoration {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px dashed var(--primary-light);
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .circle-1 {
+            top: 20%;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+            animation: rotate 30s linear infinite;
+        }
+        
+        .circle-2 {
+            bottom: 10%;
+            right: 5%;
+            width: 150px;
+            height: 150px;
+            animation: rotate 20s linear infinite reverse;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%236366f1" fill-opacity="0.1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        /* Terminal Styles */
+        .terminal {
+            background-color: var(--terminal-bg);
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .terminal-header {
+            background-color: #21252b;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .terminal-title {
+            color: #abb2bf;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-button-red {
+            background-color: #e06c75;
+        }
+        
+        .terminal-button-yellow {
+            background-color: #e5c07b;
+        }
+        
+        .terminal-button-green {
+            background-color: #98c379;
+        }
+        
+        .terminal-body {
+            padding: 20px;
+            color: var(--terminal-text);
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            height: calc(100% - 40px);
+            overflow-y: auto;
+        }
+        
+        .terminal-prompt {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .terminal-prompt-user {
+            color: var(--terminal-green);
+            margin-right: 5px;
+        }
+        
+        .terminal-prompt-location {
+            color: var(--terminal-blue);
+            margin-right: 5px;
+        }
+        
+        .terminal-prompt-symbol {
+            color: var(--terminal-purple);
+            margin-right: 10px;
+        }
+        
+        .terminal-command {
+            color: var(--terminal-text);
+        }
+        
+        .terminal-output {
+            margin-bottom: 20px;
+            padding-left: 15px;
+        }
+        
+        .terminal-output p {
+            margin-bottom: 5px;
+        }
+        
+        .terminal-output .highlight {
+            color: var(--terminal-yellow);
+        }
+        
+        .terminal-output .success {
+            color: var(--terminal-green);
+        }
+        
+        .terminal-output .error {
+            color: var(--terminal-red);
+        }
+        
+        .terminal-output .info {
+            color: var(--terminal-blue);
+        }
+        
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background-color: var(--terminal-text);
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Logo Animation */
+        .logo-blink {
+            animation: logoBlink 3s infinite;
+        }
+        
+        @keyframes logoBlink {
+            0%, 100% { opacity: 1; }
+            10% { opacity: 0.8; }
+            20% { opacity: 1; }
+            30% { opacity: 0.6; }
+            40% { opacity: 1; }
+            50% { opacity: 1; }
+            60% { opacity: 0.9; }
+            70% { opacity: 1; }
+            80% { opacity: 0.7; }
+            90% { opacity: 1; }
         }
         
         .typing-animation {
-            border-right: 2px solid var(--primary);
-            white-space: nowrap;
             overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid var(--terminal-text);
             animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            display: inline-block;
         }
         
         @keyframes typing {
@@ -159,1347 +633,1002 @@
         
         @keyframes blink-caret {
             from, to { border-color: transparent }
-            50% { border-color: var(--primary) }
+            50% { border-color: var(--terminal-text) }
         }
         
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
+        /* RTL Support */
+        [dir="rtl"] .nav-link::after {
+            left: auto;
+            right: 50%;
+            transform: translateX(50%);
         }
         
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
+        [dir="rtl"] .terminal-prompt-user,
+        [dir="rtl"] .terminal-prompt-location,
+        [dir="rtl"] .terminal-prompt-symbol {
+            margin-right: 0;
+            margin-left: 5px;
         }
         
-        .nav-link:hover::after {
-            width: 100%;
+        [dir="rtl"] .terminal-prompt-symbol {
+            margin-left: 10px;
         }
         
-        .nav-link:hover {
-            color: var(--primary);
+        [dir="rtl"] .terminal-output {
+            padding-left: 0;
+            padding-right: 15px;
         }
         
-        .btn-primary {
-            background-color: transparent;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary);
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-        
-        .btn-primary:hover {
-            color: var(--darker);
-        }
-        
-        .btn-primary:hover::before {
-            left: 0;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background-color: var(--skill-bg);
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background-color: var(--primary);
-            border-radius: 4px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: width 1.5s ease;
-        }
-        
-        .glitch {
-            position: relative;
-            animation: glitch 1s linear infinite;
-        }
-        
-        @keyframes glitch {
-            2%, 64% {
-                transform: translate(2px, 0) skew(0deg);
-            }
-            4%, 60% {
-                transform: translate(-2px, 0) skew(0deg);
-            }
-            62% {
-                transform: translate(0, 0) skew(5deg);
-            }
-        }
-        
-        .glitch:before,
-        .glitch:after {
-            content: attr(title);
-            position: absolute;
-            left: 0;
-        }
-        
-        .glitch:before {
-            animation: glitchTop 1s linear infinite;
-            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-        }
-        
-        @keyframes glitchTop {
-            2%, 64% {
-                transform: translate(2px, -2px);
-            }
-            4%, 60% {
-                transform: translate(-2px, 2px);
-            }
-            62% {
-                transform: translate(13px, -1px) skew(-13deg);
-            }
-        }
-        
-        .glitch:after {
-            animation: glitchBottom 1.5s linear infinite;
-            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-        }
-        
-        @keyframes glitchBottom {
-            2%, 64% {
-                transform: translate(-2px, 0);
-            }
-            4%, 60% {
-                transform: translate(-2px, 0);
-            }
-            62% {
-                transform: translate(-22px, 5px) skew(21deg);
-            }
-        }
-        
-        .matrix-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.05;
-        }
-        
-        .light .matrix-bg {
-            opacity: 0;
-        }
-        
-        .language-toggle {
-            position: relative;
+        /* Language Switch Button */
+        .language-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             width: 60px;
-            height: 30px;
-            background-color: var(--dark);
-            border-radius: 15px;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .language-toggle::after {
-            content: "EN";
-            position: absolute;
-            top: 50%;
-            left: 8px;
-            transform: translateY(-50%);
-            width: 22px;
-            height: 22px;
-            background-color: var(--primary);
+            height: 60px;
             border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--darker);
-            font-size: 10px;
             font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .language-toggle.active {
-            background-color: var(--dark);
-        }
-        
-        .language-toggle.active::after {
-            content: "FA";
-            left: calc(100% - 30px);
-        }
-        
-        .theme-toggle {
             cursor: pointer;
-            width: 50px;
-            height: 26px;
-            background-color: var(--dark);
-            border-radius: 13px;
-            position: relative;
-            transition: all 0.3s ease;
-            margin-left: 10px;
-            border: 1px solid var(--border);
-        }
-        
-        .theme-toggle::before {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--primary);
-            top: 2px;
-            left: 2px;
-            transition: all 0.3s ease;
-        }
-        
-        .light .theme-toggle::before {
-            left: calc(100% - 22px);
-        }
-        
-        .theme-toggle .sun-icon,
-        .theme-toggle .moon-icon {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 12px;
-            transition: opacity 0.3s ease;
-        }
-        
-        .theme-toggle .sun-icon {
-            right: 6px;
-            opacity: 0;
-        }
-        
-        .theme-toggle .moon-icon {
-            left: 6px;
-            opacity: 1;
-        }
-        
-        .light .theme-toggle .sun-icon {
-            opacity: 1;
-        }
-        
-        .light .theme-toggle .moon-icon {
-            opacity: 0;
-        }
-        
-        .code-comment {
-            color: #6a9955;
-        }
-        
-        .light .code-comment {
-            color: #008000;
-        }
-        
-        .code-keyword {
-            color: #569cd6;
-        }
-        
-        .light .code-keyword {
-            color: #0000ff;
-        }
-        
-        .code-string {
-            color: #ce9178;
-        }
-        
-        .light .code-string {
-            color: #a31515;
-        }
-        
-        .code-function {
-            color: #dcdcaa;
-        }
-        
-        .light .code-function {
-            color: #795e26;
-        }
-        
-        .code-variable {
-            color: #9cdcfe;
-        }
-        
-        .light .code-variable {
-            color: #001080;
-        }
-        
-        .code-number {
-            color: #b5cea8;
-        }
-        
-        .light .code-number {
-            color: #098658;
-        }
-        
-        .code-class {
-            color: #4ec9b0;
-        }
-        
-        .light .code-class {
-            color: #267f99;
-        }
-        
-        .cursor::after {
-            content: '|';
-            animation: cursor 1s infinite;
-        }
-        
-        @keyframes cursor {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-        
-        .light .project-card:hover {
-            box-shadow: 0 10px 30px rgba(8, 145, 178, 0.1);
-        }
-        
-        .project-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), transparent);
-        }
-        
-        .nav-container {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            background-color: var(--nav-bg);
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .section-heading {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-        
-        .section-heading::before {
-            content: "<";
-            color: var(--primary);
-            margin-right: 0.5rem;
-            opacity: 0.7;
-        }
-        
-        .section-heading::after {
-            content: "/>";
-            color: var(--primary);
-            margin-left: 0.5rem;
-            opacity: 0.7;
-        }
-        
-        .contact-input {
-            background-color: var(--input-bg);
-            border: 1px solid var(--border);
-            color: var(--text);
-            transition: all 0.3s ease;
-        }
-        
-        .contact-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(8, 145, 178, 0.2);
-            outline: none;
-        }
-        
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .neon-logo {
-            font-family: var(--font-family-code);
-            font-weight: bold;
-            font-size: 4rem;
-            color: #fff;
-            text-shadow: 
-                0 0 5px var(--primary),
-                0 0 10px var(--primary),
-                0 0 20px var(--primary),
-                0 0 40px var(--primary);
-            animation: neon-flicker 1.5s infinite alternate;
-            transition: text-shadow 0.5s ease;
-        }
-        
-        .light .neon-logo {
-            color: #0c4a6e;
-            text-shadow: 
-                0 0 5px var(--primary),
-                0 0 10px var(--primary),
-                0 0 20px var(--primary);
-        }
-        
-        @keyframes neon-flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                text-shadow: 
-                    0 0 5px var(--primary),
-                    0 0 10px var(--primary),
-                    0 0 20px var(--primary),
-                    0 0 40px var(--primary);
-            }
-            20%, 24%, 55% {
-                text-shadow: none;
-            }
-        }
-        
-        .light .neon-flicker {
-            animation: light-neon-flicker 1.5s infinite alternate;
-        }
-        
-        @keyframes light-neon-flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                text-shadow: 
-                    0 0 5px var(--primary),
-                    0 0 10px var(--primary),
-                    0 0 20px var(--primary);
-            }
-            20%, 24%, 55% {
-                text-shadow: none;
-            }
-        }
-        
-        .neon-text {
-            color: #fff;
-            text-shadow: 
-                0 0 5px var(--primary),
-                0 0 10px var(--primary),
-                0 0 20px var(--primary);
-            animation: neon-pulse 1.5s infinite alternate;
-        }
-        
-        .light .neon-text {
-            color: #0c4a6e;
-            text-shadow: 
-                0 0 5px var(--primary),
-                0 0 10px var(--primary);
-        }
-        
-        @keyframes neon-pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.8;
-            }
-        }
-        
-        .neon-name {
-            font-weight: bold;
-            color: #fff;
-            text-shadow: 
-                0 0 5px var(--primary),
-                0 0 10px var(--primary),
-                0 0 20px var(--primary),
-                0 0 40px var(--primary);
-            animation: neon-pulse 2s infinite alternate;
-        }
-        
-        .light .neon-name {
-            color: #0c4a6e;
-            text-shadow: 
-                0 0 5px var(--primary),
-                0 0 10px var(--primary);
-        }
-        
-        .subtle-name {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-top: 0.5rem;
-            color: #fff;
-            text-shadow: 
-                0 0 3px var(--primary),
-                0 0 6px var(--primary);
-            animation: neon-pulse 2s infinite alternate;
-        }
-        
-        .light .subtle-name {
-            color: #0c4a6e;
-            text-shadow: 
-                0 0 3px var(--primary),
-                0 0 6px var(--primary);
-        }
-        
-        .alert {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 1rem 2rem;
-            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             z-index: 100;
             transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
         }
         
-        .alert.show {
-            opacity: 1;
-            visibility: visible;
+        .language-btn:hover {
+            transform: scale(1.1);
         }
         
-        .alert-success {
-            background-color: rgba(0, 128, 0, 0.2);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .section-alt {
-            background-color: var(--section-alt-bg);
-        }
-        
-        footer {
-            background-color: var(--footer-bg);
-            border-top: 1px solid var(--border);
-        }
-        
-        /* Light mode background patterns */
-        .light {
-            background-color: #ffffff;
-            position: relative;
-        }
-        
-        .light::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(to right, rgba(8, 145, 178, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(8, 145, 178, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
-            z-index: -2;
-            pointer-events: none;
-        }
-        
-        .light::after {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(8, 145, 178, 0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            z-index: -3;
-            pointer-events: none;
-        }
-        
-        /* Light mode specific styles */
-        .light .project-card {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .light .tag-bg {
-            background-color: var(--tag-bg);
-            color: var(--tag-text);
-        }
-        
-        /* Mobile-first order adjustment */
-        @media (max-width: 767px) {
-            .logo-section {
-                order: -1;
-                margin-bottom: 2rem;
-            }
-            
-            .terminal-section {
-                order: 1;
-            }
-            
-            .neon-logo {
-                font-size: 3rem;
-            }
-        }
-        
-        /* Light mode geometric pattern */
-        .light-pattern {
-            display: none;
-        }
-        
-        .light .light-pattern {
-            display: block;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -4;
-            opacity: 0.4;
-            pointer-events: none;
-        }
-        
-        /* Light mode terminal styling */
-        .light .terminal {
-            border: 1px solid #cbd5e1;
-            box-shadow: 
-                0 4px 6px rgba(0, 0, 0, 0.05),
-                0 0 0 1px rgba(8, 145, 178, 0.1);
-        }
-        
-        /* Light mode skill bar animation */
-        .light .skill-progress {
-            background: linear-gradient(90deg, var(--primary), #38bdf8);
+        [dir="rtl"] .language-btn {
+            right: auto;
+            left: 30px;
         }
     </style>
 </head>
-<body class="min-h-screen">
-    <canvas id="matrix" class="matrix-bg"></canvas>
-    <div class="light-pattern"></div>
+<body>
+    <!-- Background Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="circle-decoration circle-1"></div>
+    <div class="circle-decoration circle-2"></div>
+    <div id="particles-container"></div>
     
-    <!-- Success Alert -->
-    <div id="successAlert" class="alert alert-success">
-        <span class="en-content">Your message was sent successfully!</span>
-        <span class="fa-content hidden">پیام شما با موفقیت ارسال شد!</span>
+    <!-- Language Switch Button -->
+    <div class="language-btn" id="languageButton">
+        <span id="languageBtnText">FA</span>
     </div>
     
     <!-- Navigation -->
-    <header class="fixed w-full top-0 z-50 nav-container">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <span class="text-xl font-bold text-primary cursor-pointer glitch" title="<Cloner/>">
-                    <span class="text-green-500 dark:text-green-500 light:text-cyan-600">&lt;</span>Shayan<span class="text-green-500 dark:text-green-500 light:text-cyan-600">/&gt;</span>
-                </span>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="nav-link en-content">Home</a>
-                <a href="#about" class="nav-link en-content">About</a>
-                <a href="#skills" class="nav-link en-content">Skills</a>
-                <a href="#projects" class="nav-link en-content">Projects</a>
-                <a href="#contact" class="nav-link en-content">Contact</a>
-                
-                <a href="#home" class="nav-link fa-content hidden">خانه</a>
-                <a href="#about" class="nav-link fa-content hidden">درباره من</a>
-                <a href="#skills" class="nav-link fa-content hidden">مهارت‌ها</a>
-                <a href="#projects" class="nav-link fa-content hidden">پروژه‌ها</a>
-                <a href="#contact" class="nav-link fa-content hidden">تماس</a>
-                
-                <div class="flex items-center">
-                    <div class="language-toggle" id="languageToggle"></div>
-                    <div class="theme-toggle" id="themeToggle">
-                        <i class="fas fa-moon moon-icon"></i>
-                        <i class="fas fa-sun sun-icon"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
+    <nav id="navbar" class="py-4 px-6 flex justify-between items-center sticky-nav">
+        <div class="flex items-center">
+            <span class="text-2xl font-bold mono gradient-text logo-blink">
+                Shayan.dev
+            </span>
+        </div>
         
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 py-4" style="background-color: var(--nav-bg);">
-            <a href="#home" class="block py-2 nav-link en-content">Home</a>
-            <a href="#about" class="block py-2 nav-link en-content">About</a>
-            <a href="#skills" class="block py-2 nav-link en-content">Skills</a>
-            <a href="#projects" class="block py-2 nav-link en-content">Projects</a>
-            <a href="#contact" class="block py-2 nav-link en-content">Contact</a>
-            
-            <a href="#home" class="block py-2 nav-link fa-content hidden">خانه</a>
-            <a href="#about" class="block py-2 nav-link fa-content hidden">درباره من</a>
-            <a href="#skills" class="block py-2 nav-link fa-content hidden">مهارت‌ها</a>
-            <a href="#projects" class="block py-2 nav-link fa-content hidden">پروژه‌ها</a>
-            <a href="#contact" class="block py-2 nav-link fa-content hidden">تماس</a>
-            
-            <div class="mt-4 flex items-center">
-                <span class="mr-3 en-content">Language:</span>
-                <span class="mr-3 fa-content hidden">زبان:</span>
-                <div class="language-toggle" id="mobileLanguageToggle"></div>
-                
-                <span class="mr-3 ml-4 en-content">Theme:</span>
-                <span class="mr-3 ml-4 fa-content hidden">تم:</span>
-                <div class="theme-toggle" id="mobileThemeToggle">
-                    <i class="fas fa-moon moon-icon"></i>
-                    <i class="fas fa-sun sun-icon"></i>
-                </div>
-            </div>
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="#home" class="nav-link" id="nav-home">Home</a>
+            <a href="#about" class="nav-link" id="nav-about">About</a>
+            <a href="#skills" class="nav-link" id="nav-skills">Skills</a>
+            <a href="#courses" class="nav-link" id="nav-courses">Courses</a>
+            <a href="#contact" class="nav-link" id="nav-contact">Contact</a>
         </div>
-    </header>
-
+        
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white bg-opacity-95 z-50 hidden flex-col justify-center items-center">
+        <button id="close-menu" class="absolute top-4 right-4 text-gray-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        
+        <div class="flex flex-col space-y-6 items-center">
+            <a href="#home" class="nav-link text-xl" id="mobile-nav-home">Home</a>
+            <a href="#about" class="nav-link text-xl" id="mobile-nav-about">About</a>
+            <a href="#skills" class="nav-link text-xl" id="mobile-nav-skills">Skills</a>
+            <a href="#courses" class="nav-link text-xl" id="mobile-nav-courses">Courses</a>
+            <a href="#contact" class="nav-link text-xl" id="mobile-nav-contact">Contact</a>
+        </div>
+    </div>
+    
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
-        <div class="container mx-auto px-6 py-20">
-            <div class="flex flex-col md:flex-row items-center">
-                <!-- Terminal Section -->
-                <div class="md:w-1/2 terminal-section" data-aos="fade-right">
-                    <div class="terminal">
-                        <div class="terminal-content">
-                            <p class="code-comment en-content">// Welcome to my portfolio</p>
-                            <p class="code-comment fa-content hidden">// به پورتفولیوی من خوش آمدید</p>
-                            <p class="mt-4">
-                                <span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
-                            </p>
-                            <p class="ml-4">
-                                <span class="code-variable en-content">name</span><span class="code-variable fa-content hidden">نام</span>: <span class="code-string">"Shayan Alinezhad"</span>,
-                            </p>
-                            <p class="ml-4">
-                                <span class="code-variable en-content">location</span><span class="code-variable fa-content hidden">موقعیت</span>: <span class="code-string">"Mazandaran, Iran"</span>,
-                            </p>
-                            <p class="ml-4">
-                                <span class="code-variable en-content">skills</span><span class="code-variable fa-content hidden">مهارت‌ها</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"C#"</span>, <span class="code-string">"Django"</span>],
-                            </p>
-                            <p class="ml-4">
-                                <span class="code-variable en-content">passion</span><span class="code-variable fa-content hidden">علاقه</span>: <span class="code-string en-content">"Teaching Programming"</span><span class="code-string fa-content hidden">"آموزش برنامه‌نویسی"</span>
-                            </p>
-                            <p>};</p>
-                            <p class="mt-4 typing-animation">
-                                <span class="code-function">developer</span>.<span class="code-function en-content">sayHello</span><span class="code-function fa-content hidden">سلام</span>();
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-8">
-                        <a href="#contact" class="btn-primary px-6 py-3 rounded-md inline-block en-content">Get in Touch</a>
-                        <a href="#contact" class="btn-primary px-6 py-3 rounded-md inline-block fa-content hidden">تماس با من</a>
-                    </div>
-                </div>
-                
-                <!-- Logo Section -->
-                <div class="md:w-1/2 mt-10 md:mt-0 flex flex-col justify-center items-center logo-section" data-aos="fade-left">
-                    <div class="text-center mb-4">
-                        <p class="text-lg neon-text en-content">Full-Stack Developer</p>
-                        <p class="text-lg neon-text fa-content hidden">توسعه‌دهنده فول‌استک</p>
-                    </div>
-                    <div class="neon-logo">
-                        Cloner
-                    </div>
-                    <div class="text-center">
-                        <p class="subtle-name en-content">Shayan Alinezhad</p>
-                        <p class="subtle-name fa-content hidden">شایان علی‌نژاد</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 section-alt">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-8 section-heading en-content" data-aos="fade-right">About Me</h2>
-            <h2 class="text-3xl font-bold mb-8 section-heading fa-content hidden" data-aos="fade-right">درباره من</h2>
-            
-            <div class="terminal" data-aos="fade-up">
-                <div class="terminal-content">
-                    <p class="code-comment en-content">/* Background information */</p>
-                    <p class="code-comment fa-content hidden">/* اطلاعات پیشینه */</p>
-                    <div class="mt-4 space-y-4">
-                        <p class="en-content">
-                            <span class="text-green-400">$</span> cat about_me.txt<br>
-                            <span class="cursor">I'm Shayan Alinezhad, a passionate programming instructor from Mazandaran, Iran. Currently studying Computer Science at the University of Science and Technology of Mazandaran and teaching at Nikan Programming Institute. Teaching is my main focus and profession - I love helping students understand programming concepts and develop their skills.</span>
-                        </p>
-                        <p class="fa-content hidden">
-                            <span class="text-green-400">$</span> cat about_me.txt<br>
-                            <span class="cursor">من شایان علی‌نژاد، یک مدرس برنامه‌نویسی با اشتیاق از مازندران، ایران هستم. در حال حاضر در رشته علوم کامپیوتر تحصیل  و در موسسه برنامه‌نویسی نیکان تدریس می‌کنم. تدریس تمرکز و حرفه اصلی من است - من عاشق کمک به دانشجویان برای درک مفاهیم برنامه‌نویسی و توسعه مهارت‌های آنها هستم.</span>
-                        </p>
-                        
-                        <p class="en-content">
-                            <span class="text-green-400">$</span> ls education/<br>
-                            <span class="text-blue-400">BSc_Computer_Science.md</span> - University of Science and Technology of Mazandaran
-                        </p>
-                        <p class="fa-content hidden">
-                            <span class="text-green-400">$</span> ls education/<br>
-                            <span class="text-blue-400">کارشناسی_علوم_کامپیوتر.md</span>
-                        </p>
-                        
-                        <p class="en-content">
-                            <span class="text-green-400">$</span> ls experience/<br>
-                            <span class="text-blue-400">Programming_Instructor.md</span> - Nikan Programming Institute<br>
-                            <span class="text-blue-400">Teaching_Philosophy.md</span> - Making complex concepts simple for students
-                        </p>
-                        <p class="fa-content hidden">
-                            <span class="text-green-400">$</span> ls experience/<br>
-                            <span class="text-blue-400">مدرس_برنامه‌نویسی.md</span> - موسسه برنامه‌نویسی نیکان<br>
-                            <span class="text-blue-400">فلسفه_تدریس.md</span> - ساده‌سازی مفاهیم پیچیده برای دانشجویان
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-8 section-heading en-content" data-aos="fade-right">Skills</h2>
-            <h2 class="text-3xl font-bold mb-8 section-heading fa-content hidden" data-aos="fade-right">مهارت‌ها</h2>
-            
-            <div class="terminal" data-aos="fade-up">
-                <div class="terminal-content">
-                    <p class="code-comment en-content">// Technical proficiency</p>
-                    <p class="code-comment fa-content hidden">// تخصص‌های فنی</p>
-                    
-                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <div class="mb-6">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">Python</span>
-                                    <span>75%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 75%"></div>
-                                </div>
-                                <p class="text-sm text-gray-400 en-content">Basic programming concepts, data structures, and web development</p>
-                                <p class="text-sm text-gray-400 fa-content hidden">مفاهیم پایه برنامه‌نویسی، ساختمان داده‌ها و توسعه وب</p>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">C#</span>
-                                    <span>65%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 65%"></div>
-                                </div>
-                                <p class="text-sm text-gray-400 en-content">Basic programming concepts and desktop application development</p>
-                                <p class="text-sm text-gray-400 fa-content hidden">مفاهیم پایه برنامه‌نویسی و توسعه برنامه‌های دسکتاپ</p>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">Django</span>
-                                    <span>70%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 70%"></div>
-                                </div>
-                                <p class="text-sm text-gray-400 en-content">Web development and basic database management</p>
-                                <p class="text-sm text-gray-400 fa-content hidden">توسعه وب و مدیریت پایه پایگاه داده</p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <div class="mb-6">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">HTML/CSS</span>
-                                    <span>68%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 68%"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">JavaScript</span>
-                                    <span>60%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-6">
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">SQL</span>
-                                    <span>62%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 62%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 section-alt">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-8 section-heading en-content" data-aos="fade-right">Projects</h2>
-            <h2 class="text-3xl font-bold mb-8 section-heading fa-content hidden" data-aos="fade-right">پروژه‌ها</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="p-6">
-                        <div class="text-primary mb-4">
-                            <i class="fas fa-code text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 en-content">Educational Platform</h3>
-                        <h3 class="text-xl font-bold mb-2 fa-content hidden">پلتفرم آموزشی</h3>
-                        <p class="text-gray-400 mb-4 en-content">A Django-based learning management system for teaching programming fundamentals to beginners.</p>
-                        <p class="text-gray-400 mb-4 fa-content hidden">یک سیستم مدیریت یادگیری مبتنی بر جنگو برای آموزش اصول برنامه‌نویسی به مبتدیان.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="tag-bg text-xs px-2 py-1 rounded">Python</span>
-                            <span class="tag-bg text-xs px-2 py-1 rounded">Django</span>
-                            <span class="tag-bg text-xs px-2 py-1 rounded">HTML/CSS</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="p-6">
-                        <div class="text-primary mb-4">
-                            <i class="fas fa-laptop-code text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 en-content">Programming Exercises</h3>
-                        <h3 class="text-xl font-bold mb-2 fa-content hidden">تمرین‌های برنامه‌نویسی</h3>
-                        <p class="text-gray-400 mb-4 en-content">A collection of programming exercises and solutions for teaching C# fundamentals.</p>
-                        <p class="text-gray-400 mb-4 fa-content hidden">مجموعه‌ای از تمرین‌ها و راه‌حل‌های برنامه‌نویسی برای آموزش اصول C#.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="tag-bg text-xs px-2 py-1 rounded">C#</span>
-                            <span class="tag-bg text-xs px-2 py-1 rounded">.NET</span>
-                            <span class="tag-bg text-xs px-2 py-1 rounded">Education</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="p-6">
-                        <div class="text-primary mb-4">
-                            <i class="fas fa-chalkboard-teacher text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 en-content">Teaching Resources</h3>
-                        <h3 class="text-xl font-bold mb-2 fa-content hidden">منابع آموزشی</h3>
-                        <p class="text-gray-400 mb-4 en-content">A repository of teaching materials, slides, and code examples for programming courses.</p>
-                        <p class="text-gray-400 mb-4 fa-content hidden">مخزنی از مطالب آموزشی، اسلایدها و نمونه کدها برای دوره‌های برنامه‌نویسی.</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="tag-bg text-xs px-2 py-1 rounded">Python</span>
-                            <span class="tag-bg text-xs px-2 py-1 rounded">Education</span>
-                            <span class="tag-bg text-xs px-2 py-1 rounded">Documentation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-8 section-heading en-content" data-aos="fade-right">Contact</h2>
-            <h2 class="text-3xl font-bold mb-8 section-heading fa-content hidden" data-aos="fade-right">تماس</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="terminal" data-aos="fade-up">
-                    <div class="terminal-content">
-                        <p class="code-comment en-content">// Send me a message</p>
-                        <p class="code-comment fa-content hidden">// برای من پیام بفرستید</p>
-                        
-                        <form id="contactForm" class="mt-6 space-y-4">
-                            <div>
-                                <label class="block mb-2 text-sm en-content">Name</label>
-                                <label class="block mb-2 text-sm fa-content hidden">نام</label>
-                                <input type="text" name="name" class="w-full px-4 py-2 rounded-md contact-input" placeholder="string name = Console.ReadLine();" required>
-                            </div>
-                            <div>
-                                <label class="block mb-2 text-sm en-content">Email</label>
-                                <label class="block mb-2 text-sm fa-content hidden">ایمیل</label>
-                                <input type="email" name="email" class="w-full px-4 py-2 rounded-md contact-input" placeholder="let email = prompt();
-" required>
-                            </div>
-                            <div>
-                                <label class="block mb-2 text-sm en-content">Message</label>
-                                <label class="block mb-2 text-sm fa-content hidden">پیام</label>
-                                <textarea name="message" class="w-full px-4 py-2 rounded-md contact-input" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary px-6 py-3 rounded-md en-content">Send Message</button>
-                            <button type="submit" class="btn-primary px-6 py-3 rounded-md fa-content hidden">ارسال پیام</button>
-                        </form>
-                    </div>
-                </div>
-                
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="terminal">
-                        <div class="terminal-content">
-                            <p class="code-comment en-content">// Connect with me</p>
-                            <p class="code-comment fa-content hidden">// با من در ارتباط باشید</p>
-                            
-                            <div class="mt-6 space-y-4">
-                                <div class="flex items-center">
-                                    <i class="fas fa-envelope text-primary w-8"></i>
-                                    <span>clonera225@icloud.com</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt text-primary w-8"></i>
-                                    <span class="en-content">Mazandaran, Iran</span>
-                                    <span class="fa-content hidden">مازندران، ایران</span>
-                                </div>
-
-                                <div class="flex items-center">
-                                    <i class="fas fa-briefcase text-primary w-8"></i>
-                                    <span class="en-content">Nikan Programming Institute</span>
-                                    <span class="fa-content hidden">موسسه برنامه‌نویسی نیکان</span>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-8">
-                                <p class="mb-4 en-content">Find me on social media:</p>
-                                <p class="mb-4 fa-content hidden">من را در شبکه‌های اجتماعی پیدا کنید:</p>
-                                <div class="flex space-x-4">
-                                    <a href="https://github.com/shayan-clo1" target="_blank" class="social-icon text-2xl"><i class="fab fa-github"></i></a>
-                                    <a href="https://instagram.com/shaayan.alinezhad" target="_blank" class="social-icon text-2xl"><i class="fab fa-instagram"></i></a>
-                                    <a href="https://t.me/cloner32" target="_blank" class="social-icon text-2xl"><i class="fab fa-telegram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 border-t">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p class="en-content">&copy; 2025 Shayan Alinezhad. All rights reserved.</p>
-                    <p class="fa-content hidden">&copy; ۲۰۲۵ شایان علی‌نژاد. تمامی حقوق محفوظ است.</p>
-                </div>
-                <div class="flex space-x-4">
-                    <a href="#home" class="text-gray-400 hover:text-primary transition-colors">
-                        <i class="fas fa-arrow-up"></i>
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <div class="wave"></div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="gradient-text neon-text" id="hero-name-en">Shayan Alinezhad</span>
+                    <span class="gradient-text neon-text hidden" id="hero-name-fa">شایان علی‌نژاد</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl font-medium text-gray-600 mb-6">
+                    <span id="hero-text-en">
+                        <span class="mono text-indigo-500">Cloner</span> - Developer & Programming Instructor
+                    </span>
+                    <span id="hero-text-fa" class="hidden">
+                        <span class="mono text-indigo-500">کلونر</span> - توسعه دهنده و مدرس برنامه نویسی
+                    </span>
+                </h2>
+                <p class="text-gray-500 mb-8 max-w-lg mx-auto md:mx-0" id="location-en">
+                    Passionate about teaching and creating innovative solutions based in Mazandaran, Iran
+                </p>
+                <p class="text-gray-500 mb-8 max-w-lg mx-auto md:mx-0 hidden" id="location-fa">
+                    مشتاق تدریس و ایجاد راه‌حل‌های نوآورانه، مستقر در مازندران، ایران
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#contact" class="btn">
+                        <span id="contact-btn-en">Contact Me</span>
+                        <span id="contact-btn-fa" class="hidden">تماس با من</span>
+                    </a>
+                    <a href="#skills" class="btn btn-outline">
+                        <span id="skills-btn-en">My Skills</span>
+                        <span id="skills-btn-fa" class="hidden">مهارت‌های من</span>
                     </a>
                 </div>
             </div>
+            <div class="relative">
+                <div class="floating">
+                    <div class="terminal" style="height: 280px;">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <div class="terminal-button terminal-button-red"></div>
+                                <div class="terminal-button terminal-button-yellow"></div>
+                                <div class="terminal-button terminal-button-green"></div>
+                            </div>
+                            <div class="terminal-title">shayan@dev: ~/portfolio</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-prompt">
+                                <span class="terminal-prompt-user">shayan@dev</span>
+                                <span class="terminal-prompt-location">~/portfolio</span>
+                                <span class="terminal-prompt-symbol">$</span>
+                                <span class="terminal-command" id="typing-command">whoami</span>
+                            </div>
+                            <div class="terminal-output">
+                                <p class="success">Shayan Alinezhad (Cloner)</p>
+                                <p>Full-stack Developer & Programming Instructor</p>
+                            </div>
+                            
+                            <div class="terminal-prompt">
+                                <span class="terminal-prompt-user">shayan@dev</span>
+                                <span class="terminal-prompt-location">~/portfolio</span>
+                                <span class="terminal-prompt-symbol">$</span>
+                                <span class="terminal-command">cat about.txt</span>
+                            </div>
+                            <div class="terminal-output">
+                                <p>I'm a passionate developer and instructor from Iran.</p>
+                            </div>
+                            
+                            <div class="terminal-prompt">
+                                <span class="terminal-prompt-user">shayan@dev</span>
+                                <span class="terminal-prompt-location">~/portfolio</span>
+                                <span class="terminal-prompt-symbol">$</span>
+                                <span class="terminal-command" id="current-command"></span>
+                                <span class="terminal-cursor"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="visit-counter" class="text-center text-sm text-gray-500 mt-4">
-  در حال بارگذاری آمار بازدید امروز...
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-indigo-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
         </div>
-
-    </footer>
-
-    <script>
-        // Initialize EmailJS
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
-        })();
-        
-        // Initialize AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="gradient-text" id="about-title-en">About Me</span>
+                    <span class="gradient-text hidden" id="about-title-fa">درباره من</span>
+                </h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+            </div>
             
-            // Initialize skill bars animation
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="card p-6 z-10 relative">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-indigo-100 rounded-full -mt-10 -mr-10 z-0"></div>
+                        <div class="absolute bottom-0 left-0 w-16 h-16 bg-pink-100 rounded-full -mb-8 -ml-8 z-0"></div>
+                        
+                        <div class="relative z-10">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 flex items-center justify-center text-white mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">
+                                    <span id="personal-title-en">Personal Info</span>
+                                    <span id="personal-title-fa" class="hidden">اطلاعات شخصی</span>
+                                </h3>
+                            </div>
+                            
+                            <div class="space-y-3 text-gray-600" id="about-content-en">
+                                <p>
+                                    Hello, I'm Shayan Alinezhad, also known as Cloner. I'm a passionate full-stack developer and programming instructor from Mazandaran, Iran.
+                                </p>
+                                <p>
+                                    Currently studying Computer Science at the University of Science and Technology of Mazandaran , I focus on creating innovative solutions and sharing knowledge with others.
+                                </p>
+                                <p>
+                                    Teaching is my main focus and profession at Nikan Programming Institute, where I help students master programming skills.
+                                </p>
+                            </div>
+                            
+                            <div class="space-y-3 text-gray-600 hidden" id="about-content-fa">
+                                <p>
+                                    سلام، من شایان علی‌نژاد هستم، معروف به کلونر. من یک توسعه‌دهنده فول‌استک و مدرس برنامه‌نویسی از مازندران، ایران هستم.
+                                </p>
+                                <p>
+                                    در حال حاضر در رشته علوم کامپیوتر  تحصیل می‌کنم و بر ایجاد راه‌حل‌های نوآورانه و به اشتراک‌گذاری دانش با دیگران تمرکز دارم.
+                                </p>
+                                <p>
+                                    تدریس، تمرکز و حرفه اصلی من در موسسه برنامه‌نویسی نیکان است، جایی که به دانشجویان کمک می‌کنم تا مهارت‌های برنامه‌نویسی را به خوبی فرا بگیرند.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="card p-6 hover:border-indigo-500 hover:border-2 transition-all">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-500 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-gray-800">
+                                <span id="education-title-en">Education</span>
+                                <span id="education-title-fa" class="hidden">تحصیلات</span>
+                            </h3>
+                        </div>
+                        <div id="education-content-en">
+                            <p class="text-gray-600 font-medium">BSc in Computer Science</p>
+                            <p class="text-gray-500 text-sm">University of Science and Technology of Babol</p>
+                            <p class="text-gray-400 text-sm mt-2">2020 - Present</p>
+                        </div>
+                        <div id="education-content-fa" class="hidden">
+                            <p class="text-gray-600 font-medium">کارشناسی علوم کامپیوتر</p>
+                            <p class="text-gray-400 text-sm mt-2">۱۳۹۹ - تاکنون</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 hover:border-pink-500 hover:border-2 transition-all">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-gray-800">
+                                <span id="experience-title-en">Experience</span>
+                                <span id="experience-title-fa" class="hidden">تجربیات</span>
+                            </h3>
+                        </div>
+                        <div id="experience-content-en">
+                            <p class="text-gray-600 font-medium">Programming Instructor</p>
+                            <p class="text-gray-500 text-sm">Nikan Programming Institute</p>
+                            <p class="text-gray-400 text-sm mt-2">2019 - Present</p>
+                        </div>
+                        <div id="experience-content-fa" class="hidden">
+                            <p class="text-gray-600 font-medium">مدرس برنامه‌نویسی</p>
+                            <p class="text-gray-500 text-sm">موسسه برنامه‌نویسی نیکان</p>
+                            <p class="text-gray-400 text-sm mt-2">۱۳۹۸ - تاکنون</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 hover:border-green-500 hover:border-2 transition-all">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-gray-800">
+                                <span id="specialization-en">Specialization</span>
+                                <span id="specialization-fa" class="hidden">تخصص</span>
+                            </h3>
+                        </div>
+                        <div id="specialization-content-en">
+                            <p class="text-gray-600">Python, C#, Django</p>
+                            <p class="text-gray-500 text-sm mt-2">Full-stack Web Development</p>
+                        </div>
+                        <div id="specialization-content-fa" class="hidden">
+                            <p class="text-gray-600">پایتون، سی‌شارپ، جنگو</p>
+                            <p class="text-gray-500 text-sm mt-2">توسعه وب فول‌استک</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-6 hover:border-yellow-500 hover:border-2 transition-all">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="font-bold text-gray-800">
+                                <span id="interests-en">Interests</span>
+                                <span id="interests-fa" class="hidden">علایق</span>
+                            </h3>
+                        </div>
+                        <div id="interests-content-en">
+                            <p class="text-gray-600">Teaching, AI, Open Source</p>
+                            <p class="text-gray-500 text-sm mt-2">Continuous Learning</p>
+                        </div>
+                        <div id="interests-content-fa" class="hidden">
+                            <p class="text-gray-600">تدریس، هوش مصنوعی، متن‌باز</p>
+                            <p class="text-gray-500 text-sm mt-2">یادگیری مداوم</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="gradient-text" id="skills-title-en">Technical Skills</span>
+                    <span class="gradient-text hidden" id="skills-title-fa">مهارت‌های فنی</span>
+                </h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-12">
+                <div class="card p-8 shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800">
+                        <span id="programming-title-en">Programming Languages</span>
+                        <span id="programming-title-fa" class="hidden">زبان‌های برنامه‌نویسی</span>
+                    </h3>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">Python</span>
+                            <span class="text-indigo-500">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">C#</span>
+                            <span class="text-indigo-500">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">JavaScript</span>
+                            <span class="text-indigo-500">60%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="60%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-700">HTML/CSS</span>
+                            <span class="text-indigo-500">55%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="55%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+                <div class="card p-6 flex flex-col items-center justify-center">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-blue-500">
+                            <path fill="currentColor" d="M12,1.85C11.73,1.85 11.45,1.92 11.22,2.05L3.78,6.35C3.3,6.63 3,7.15 3,7.71V16.29C3,16.85 3.3,17.37 3.78,17.65L5.73,18.77C6.68,19.23 7,19.24 7.44,19.24C8.84,19.24 9.65,18.39 9.65,16.91V8.44C9.65,8.32 9.55,8.22 9.43,8.22H8.5C8.37,8.22 8.27,8.32 8.27,8.44V16.91C8.27,17.57 7.59,18.22 6.5,17.67L4.45,16.5C4.38,16.45 4.34,16.37 4.34,16.29V7.71C4.34,7.62 4.38,7.54 4.45,7.5L11.89,3.21C11.95,3.17 12.05,3.17 12.11,3.21L19.55,7.5C19.62,7.54 19.66,7.62 19.66,7.71V16.29C19.66,16.37 19.62,16.45 19.55,16.5L12.11,20.79C12.05,20.83 11.95,20.83 11.89,20.79L10,19.65C9.92,19.62 9.84,19.61 9.79,19.64C9.26,19.94 9.16,20 8.67,20.15C8.55,20.19 8.36,20.26 8.74,20.47L11.22,21.94C11.46,22.08 11.72,22.15 12,22.15C12.28,22.15 12.54,22.08 12.78,21.94L20.22,17.65C20.7,17.37 21,16.85 21,16.29V7.71C21,7.15 20.7,6.63 20.22,6.35L12.78,2.05C12.55,1.92 12.28,1.85 12,1.85M14,8C11.88,8 10.61,8.89 10.61,10.39C10.61,12 11.87,12.47 13.91,12.67C16.34,12.91 16.53,13.27 16.53,13.75C16.53,14.58 15.86,14.93 14.3,14.93C12.32,14.93 11.9,14.44 11.75,13.46C11.73,13.36 11.64,13.28 11.53,13.28H10.57C10.45,13.28 10.36,13.37 10.36,13.5C10.36,14.74 11.04,16.24 14.3,16.24C16.65,16.24 18,15.31 18,13.69C18,12.08 16.92,11.66 14.63,11.35C12.32,11.05 12.09,10.89 12.09,10.35C12.09,9.9 12.29,9.3 14,9.3C15.5,9.3 16.09,9.63 16.32,10.66C16.34,10.76 16.43,10.83 16.53,10.83H17.5C17.55,10.83 17.61,10.81 17.65,10.76C17.69,10.72 17.72,10.66 17.7,10.6C17.56,8.82 16.38,8 14,8Z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-800">Python</h4>
+                </div>
+                
+                <div class="card p-6 flex flex-col items-center justify-center">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-green-500">
+                            <path fill="currentColor" d="M11.19,1.36L4.19,4.47C3.47,4.79 3,5.51 3,6.3V17.7C3,18.49 3.47,19.21 4.19,19.53L11.19,22.64C11.71,22.88 12.29,22.88 12.81,22.64L19.81,19.53C20.53,19.21 21,18.49 21,17.7V6.3C21,5.51 20.53,4.79 19.81,4.47L12.81,1.36C12.29,1.13 11.71,1.13 11.19,1.36M12,3.19L17.75,5.73V8.73C17.75,10.54 16.71,12.24 15.05,13.04L12,14.47V3.19M5.75,7.48L10.5,5.48V15.8L8.75,16.67C7.06,17.5 5.75,15.5 5.75,14.07V7.48Z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-800">Django</h4>
+                </div>
+                
+                <div class="card p-6 flex flex-col items-center justify-center">
+                    <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-purple-500">
+                            <path fill="currentColor" d="M9.931,12.645h4.138l-2.07-4.908m0-7.737L.68,3.982l1.726,14.771L12,24l9.596-5.242L23.32,3.984,11.999.001zm7.064,18.31h-2.638l-1.422-3.503H8.996l-1.422,3.503h-2.64L12,2.65z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-800">C#</h4>
+                </div>
+                
+                <div class="card p-6 flex flex-col items-center justify-center">
+                    <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 text-yellow-500">
+                            <path fill="currentColor" d="M12,17.56L16.07,16.43L16.62,10.33H9.38L9.2,8.3H16.8L17,6.31H7L7.56,12.32H14.45L14.22,14.9L12,15.5L9.78,14.9L9.64,13.24H7.64L7.93,16.43L12,17.56M4.07,3H19.93L18.5,19.2L12,21L5.5,19.2L4.07,3Z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-gray-800">HTML/CSS</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="gradient-text" id="courses-title-en">My Courses</span>
+                    <span class="gradient-text hidden" id="courses-title-fa">دوره‌های من</span>
+                </h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto" id="courses-desc-en">
+                    I teach programming courses at Nikan Programming Institute
+                </p>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto hidden" id="courses-desc-fa">
+                    من دوره‌های برنامه‌نویسی را در موسسه برنامه‌نویسی نیکان تدریس می‌کنم
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="card overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">
+                            <span id="course1-title-en">Python Programming Fundamentals</span>
+                            <span id="course1-title-fa" class="hidden">مبانی برنامه‌نویسی پایتون</span>
+                        </h3>
+                        <p class="text-gray-600 mb-4" id="course1-desc-en">
+                            Learn Python from scratch with practical examples and projects.
+                        </p>
+                        <p class="text-gray-600 mb-4 hidden" id="course1-desc-fa">
+                            یادگیری پایتون از صفر با مثال‌ها و پروژه‌های عملی.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="text-gray-600 ml-2">5.0</span>
+                            </div>
+                            <span class="text-gray-600">
+                                <span id="course1-students-en">120 Students</span>
+                                <span id="course1-students-fa" class="hidden">۱۲۰ دانشجو</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="card overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">
+                            <span id="course2-title-en">Web Development with Django</span>
+                            <span id="course2-title-fa" class="hidden">توسعه وب با جنگو</span>
+                        </h3>
+                        <p class="text-gray-600 mb-4" id="course2-desc-en">
+                            Build powerful web applications using Django framework.
+                        </p>
+                        <p class="text-gray-600 mb-4 hidden" id="course2-desc-fa">
+                            ساخت برنامه‌های وب قدرتمند با استفاده از فریمورک جنگو.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="text-gray-600 ml-2">4.8</span>
+                            </div>
+                            <span class="text-gray-600">
+                                <span id="course2-students-en">85 Students</span>
+                                <span id="course2-students-fa" class="hidden">۸۵ دانشجو</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="card overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">
+                            <span id="course3-title-en">C# Programming Masterclass</span>
+                            <span id="course3-title-fa" class="hidden">دوره جامع برنامه‌نویسی سی‌شارپ</span>
+                        </h3>
+                        <p class="text-gray-600 mb-4" id="course3-desc-en">
+                            Master C# programming language and build desktop applications.
+                        </p>
+                        <p class="text-gray-600 mb-4 hidden" id="course3-desc-fa">
+                            تسلط بر زبان برنامه‌نویسی سی‌شارپ و ساخت برنامه‌های دسکتاپ.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="text-gray-600 ml-2">4.9</span>
+                            </div>
+                            <span class="text-gray-600">
+                                <span id="course3-students-en">95 Students</span>
+                                <span id="course3-students-fa" class="hidden">۹۵ دانشجو</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="btn">
+                    <span id="all-courses-btn-en">View All Courses</span>
+                    <span id="all-courses-btn-fa" class="hidden">مشاهده همه دوره‌ها</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="gradient-text" id="contact-title-en">Get In Touch</span>
+                    <span class="gradient-text hidden" id="contact-title-fa">تماس با من</span>
+                </h2>
+                <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto" id="contact-desc-en">
+                    Have a question or want to work together? Feel free to contact me!
+                </p>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto hidden" id="contact-desc-fa">
+                    سوالی دارید یا می‌خواهید با هم همکاری کنیم؟ با من در تماس باشید!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="card p-8">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800">
+                        <span id="message-title-en">Send Me a Message</span>
+                        <span id="message-title-fa" class="hidden">برای من پیام بفرستید</span>
+                    </h3>
+                    
+                    <form>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="name">
+                                <span id="name-label-en">Name</span>
+                                <span id="name-label-fa" class="hidden">نام</span>
+                            </label>
+                            <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" type="text" id="name" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="email">
+                                <span id="email-label-en">Email</span>
+                                <span id="email-label-fa" class="hidden">ایمیل</span>
+                            </label>
+                            <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" type="email" id="email" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="subject">
+                                <span id="subject-label-en">Subject</span>
+                                <span id="subject-label-fa" class="hidden">موضوع</span>
+                            </label>
+                            <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" type="text" id="subject">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-medium mb-2" for="message">
+                                <span id="message-label-en">Message</span>
+                                <span id="message-label-fa" class="hidden">پیام</span>
+                            </label>
+                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn w-full">
+                            <span id="send-btn-en">Send Message</span>
+                            <span id="send-btn-fa" class="hidden">ارسال پیام</span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="card p-8">
+                    <h3 class="text-xl font-bold mb-6 text-gray-800">
+                        <span id="contact-info-title-en">Contact Information</span>
+                        <span id="contact-info-title-fa" class="hidden">اطلاعات تماس</span>
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-500 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">
+                                    <span id="email-title-en">Email</span>
+                                    <span id="email-title-fa" class="hidden">ایمیل</span>
+                                </h4>
+                                <p class="text-gray-600">clonera225@icloud.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-500 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">
+                                    <span id="telegram-title-en">Telegram</span>
+                                    <span id="telegram-title-fa" class="hidden">تلگرام</span>
+                                </h4>
+                                <p class="text-gray-600"><a href="https://t.me/cloner32" class="text-indigo-500 hover:underline">@cloner32</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-500 mr-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">
+                                    <span id="location-title-en">Location</span>
+                                    <span id="location-title-fa" class="hidden">موقعیت</span>
+                                </h4>
+                                <p class="text-gray-600">
+                                    <span id="location-text-en">Mazandaran, Iran</span>
+                                    <span id="location-text-fa" class="hidden">مازندران، ایران</span>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <h4 class="font-medium text-gray-800 mb-4">
+                                <span id="social-title-en">Social Media</span>
+                                <span id="social-title-fa" class="hidden">شبکه‌های اجتماعی</span>
+                            </h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/Shayan-alinezhad" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-900 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.instagram.com/shaayan.alinezhad" target="_blank" class="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center text-white hover:bg-pink-700 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://t.me/cloner32" target="_blank" class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white hover:bg-blue-600 transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="text-2xl font-bold mono mb-4">Shayan.dev</div>
+            <p class="mb-6" id="footer-text-en">Developer & Programming Instructor</p>
+            <p class="mb-6 hidden" id="footer-text-fa">توسعه دهنده و مدرس برنامه نویسی</p>
+            <div class="w-24 h-1 bg-indigo-500 mx-auto rounded-full mb-6"></div>
+            <p class="text-gray-400" id="copyright-en">&copy; 2025 Shayan Alinezhad. All rights reserved.</p>
+            <p class="text-gray-400 hidden" id="copyright-fa">&copy; 1404 شایان علی‌نژاد. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Language Toggle
+        const languageButton = document.getElementById('languageButton');
+        const languageBtnText = document.getElementById('languageBtnText');
+        let isEnglish = true;
+        
+        function toggleLanguage() {
+            isEnglish = !isEnglish;
+            
+            if (isEnglish) {
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                languageBtnText.textContent = 'FA';
+                
+                // Show English elements, hide Persian elements
+                document.querySelectorAll('[id$="-en"]').forEach(el => el.classList.remove('hidden'));
+                document.querySelectorAll('[id$="-fa"]').forEach(el => el.classList.add('hidden'));
+                
+                // Update navigation text
+                document.getElementById('nav-home').textContent = 'Home';
+                document.getElementById('nav-about').textContent = 'About';
+                document.getElementById('nav-skills').textContent = 'Skills';
+                document.getElementById('nav-courses').textContent = 'Courses';
+                document.getElementById('nav-contact').textContent = 'Contact';
+                
+                // Update mobile navigation text
+                document.getElementById('mobile-nav-home').textContent = 'Home';
+                document.getElementById('mobile-nav-about').textContent = 'About';
+                document.getElementById('mobile-nav-skills').textContent = 'Skills';
+                document.getElementById('mobile-nav-courses').textContent = 'Courses';
+                document.getElementById('mobile-nav-contact').textContent = 'Contact';
+            } else {
+                document.documentElement.lang = 'fa';
+                document.documentElement.dir = 'rtl';
+                languageBtnText.textContent = 'EN';
+                
+                // Show Persian elements, hide English elements
+                document.querySelectorAll('[id$="-en"]').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('[id$="-fa"]').forEach(el => el.classList.remove('hidden'));
+                
+                // Update navigation text
+                document.getElementById('nav-home').textContent = 'خانه';
+                document.getElementById('nav-about').textContent = 'درباره من';
+                document.getElementById('nav-skills').textContent = 'مهارت‌ها';
+                document.getElementById('nav-courses').textContent = 'دوره‌ها';
+                document.getElementById('nav-contact').textContent = 'تماس';
+                
+                // Update mobile navigation text
+                document.getElementById('mobile-nav-home').textContent = 'خانه';
+                document.getElementById('mobile-nav-about').textContent = 'درباره من';
+                document.getElementById('mobile-nav-skills').textContent = 'مهارت‌ها';
+                document.getElementById('mobile-nav-courses').textContent = 'دوره‌ها';
+                document.getElementById('mobile-nav-contact').textContent = 'تماس';
+            }
+        }
+        
+        languageButton.addEventListener('click', toggleLanguage);
+        
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+        
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+        
+        // Sticky Navigation
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+        
+        // Terminal Animation
+        const commands = [
+            'ls projects/',
+            'python3 main.py',
+            'git commit -m "Update portfolio"',
+            'npm start',
+            'docker-compose up'
+        ];
+        
+        let commandIndex = 0;
+        const currentCommand = document.getElementById('current-command');
+        
+        function typeCommand() {
+            const command = commands[commandIndex];
+            let charIndex = 0;
+            
+            function type() {
+                if (charIndex < command.length) {
+                    currentCommand.textContent += command.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 100);
+                } else {
+                    setTimeout(eraseCommand, 2000);
+                }
+            }
+            
+            type();
+        }
+        
+        function eraseCommand() {
+            const command = currentCommand.textContent;
+            let charIndex = command.length;
+            
+            function erase() {
+                if (charIndex > 0) {
+                    currentCommand.textContent = command.substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, 50);
+                } else {
+                    commandIndex = (commandIndex + 1) % commands.length;
+                    setTimeout(typeCommand, 500);
+                }
+            }
+            
+            erase();
+        }
+        
+        // Start terminal animation
+        setTimeout(typeCommand, 1000);
+        
+        // Skill Bar Animation
+        function animateSkillBars() {
             const skillBars = document.querySelectorAll('.skill-progress');
             skillBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 300);
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width;
+            });
+        }
+        
+        // Scroll Reveal Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize ScrollReveal
+            const sr = ScrollReveal({
+                origin: 'bottom',
+                distance: '30px',
+                duration: 1000,
+                delay: 200,
+                easing: 'ease-in-out',
+                reset: false
             });
             
-            // Create light mode geometric pattern
-            createLightModePattern();
+            // Reveal elements
+            sr.reveal('.card', { interval: 100 });
+            sr.reveal('.section-title', { origin: 'top' });
+            sr.reveal('.skill-bar', { interval: 100 });
+            sr.reveal('.terminal', { origin: 'right' });
             
-            // Matrix background effect
-            const canvas = document.getElementById('matrix');
-            const ctx = canvas.getContext('2d');
-            
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-            const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            const nums = '0123456789';
-            const code = '{}[]()<>?/\\|~!@#$%^&*-+=';
-            
-            const alphabet = katakana + latin + nums + code;
-            
-            const fontSize = 16;
-            const columns = canvas.width / fontSize;
-            
-            const rainDrops = [];
-            
-            for (let x = 0; x < columns; x++) {
-                rainDrops[x] = 1;
-            }
-            
-            const draw = () => {
-                // Only draw matrix effect in dark mode
-                if (document.documentElement.classList.contains('dark')) {
-                    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    
-                    ctx.fillStyle = '#0f0';
-                    ctx.font = fontSize + 'px monospace';
-                    
-                    for (let i = 0; i < rainDrops.length; i++) {
-                        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-                        
-                        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                            rainDrops[i] = 0;
-                        }
-                        rainDrops[i]++;
-                    }
-                } else {
-                    // Clear canvas in light mode
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                }
-            };
-            
-            // Set interval for matrix animation
-            const matrixInterval = setInterval(draw, 30);
-            
-            // Create light mode geometric pattern
-            function createLightModePattern() {
-                const patternContainer = document.querySelector('.light-pattern');
-                
-                // Create SVG for light mode pattern
-                const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-                svg.setAttribute("width", "100%");
-                svg.setAttribute("height", "100%");
-                svg.style.position = "absolute";
-                svg.style.top = "0";
-                svg.style.left = "0";
-                svg.style.zIndex = "-1";
-                
-                // Create pattern definitions
-                const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-                
-                // Create pattern
-                const pattern = document.createElementNS("http://www.w3.org/2000/svg", "pattern");
-                pattern.setAttribute("id", "lightPattern");
-                pattern.setAttribute("width", "60");
-                pattern.setAttribute("height", "60");
-                pattern.setAttribute("patternUnits", "userSpaceOnUse");
-                
-                // Create pattern elements
-                for (let i = 0; i < 3; i++) {
-                    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                    circle.setAttribute("cx", 10 + (i * 20));
-                    circle.setAttribute("cy", 10);
-                    circle.setAttribute("r", 1);
-                    circle.setAttribute("fill", "rgba(8, 145, 178, 0.2)");
-                    pattern.appendChild(circle);
-                }
-                
-                for (let i = 0; i < 3; i++) {
-                    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                    circle.setAttribute("cx", 10 + (i * 20));
-                    circle.setAttribute("cy", 30);
-                    circle.setAttribute("r", 1);
-                    circle.setAttribute("fill", "rgba(8, 145, 178, 0.2)");
-                    pattern.appendChild(circle);
-                }
-                
-                for (let i = 0; i < 3; i++) {
-                    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-                    circle.setAttribute("cx", 10 + (i * 20));
-                    circle.setAttribute("cy", 50);
-                    circle.setAttribute("r", 1);
-                    circle.setAttribute("fill", "rgba(8, 145, 178, 0.2)");
-                    pattern.appendChild(circle);
-                }
-                
-                // Add pattern to defs
-                defs.appendChild(pattern);
-                svg.appendChild(defs);
-                
-                // Create rectangle with pattern
-                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                rect.setAttribute("width", "100%");
-                rect.setAttribute("height", "100%");
-                rect.setAttribute("fill", "url(#lightPattern)");
-                svg.appendChild(rect);
-                
-                // Add SVG to pattern container
-                patternContainer.appendChild(svg);
-            }
-            
-            // Mobile menu toggle
-            const menuToggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            menuToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Language toggle
-            const languageToggle = document.getElementById('languageToggle');
-            const mobileLanguageToggle = document.getElementById('mobileLanguageToggle');
-            const enContent = document.querySelectorAll('.en-content');
-            const faContent = document.querySelectorAll('.fa-content');
-            
-            function toggleLanguage() {
-                document.body.classList.toggle('farsi');
-                languageToggle.classList.toggle('active');
-                mobileLanguageToggle.classList.toggle('active');
-                
-                enContent.forEach(el => el.classList.toggle('hidden'));
-                faContent.forEach(el => el.classList.toggle('hidden'));
-            }
-            
-            languageToggle.addEventListener('click', toggleLanguage);
-            mobileLanguageToggle.addEventListener('click', toggleLanguage);
-            
-            // Theme toggle
-            const themeToggle = document.getElementById('themeToggle');
-            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-            const htmlElement = document.documentElement;
-            
-            // Check for saved theme preference or use system preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                htmlElement.classList.remove('dark', 'light');
-                htmlElement.classList.add(savedTheme);
-                updateThemeSpecificElements();
-            } else {
-                // Use system preference
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-                    htmlElement.classList.remove('light');
-                    htmlElement.classList.add('dark');
-                    updateThemeSpecificElements();
-                }
-            }
-            
-            function toggleTheme() {
-                if (htmlElement.classList.contains('dark')) {
-                    htmlElement.classList.remove('dark');
-                    htmlElement.classList.add('light');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    htmlElement.classList.remove('light');
-                    htmlElement.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                }
-                
-                updateThemeSpecificElements();
-            }
-            
-            themeToggle.addEventListener('click', toggleTheme);
-            mobileThemeToggle.addEventListener('click', toggleTheme);
-            
-            // Update theme-specific elements
-            function updateThemeSpecificElements() {
-                // Update project card tags background
-                const tagElements = document.querySelectorAll('.project-card .bg-gray-800, .project-card .tag-bg');
-                
-                if (htmlElement.classList.contains('light')) {
-                    tagElements.forEach(tag => {
-                        tag.classList.remove('bg-gray-800');
-                        tag.classList.add('tag-bg');
-                    });
-                } else {
-                    tagElements.forEach(tag => {
-                        tag.classList.remove('tag-bg');
-                        tag.classList.add('bg-gray-800');
-                    });
-                }
-            }
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Close mobile menu if open
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
+            // Animate skill bars when they come into view
+            const skillsSection = document.getElementById('skills');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkillBars();
+                        observer.unobserve(entry.target);
                     }
                 });
             });
             
-            // Handle form submission with EmailJS
-            const contactForm = document.getElementById('contactForm');
-            const successAlert = document.getElementById('successAlert');
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const nameInput = contactForm.querySelector('input[name="name"]');
-                const emailInput = contactForm.querySelector('input[name="email"]');
-                const messageInput = contactForm.querySelector('textarea[name="message"]');
-                
-                // Prepare template parameters
-                const templateParams = {
-                    from_name: nameInput.value,
-                    from_email: emailInput.value,
-                    message: messageInput.value,
-                    to_email: 'clonera225@icloud.com'
-                };
-                
-                // Send email using EmailJS
-                emailjs.send('default_service', 'template_id', templateParams)
-                    .then(function() {
-                        // Show success message
-                        successAlert.classList.add('show');
-                        
-                        // Clear form
-                        nameInput.value = '';
-                        emailInput.value = '';
-                        messageInput.value = '';
-                        
-                        // Hide success message after 3 seconds
-                        setTimeout(() => {
-                            successAlert.classList.remove('show');
-                        }, 3000);
-                    }, function(error) {
-                        console.error('Email sending failed:', error);
-                        alert('Failed to send message. Please try again later.');
-                    });
-            });
-            
-            // Handle window resize for matrix canvas
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            });
+            observer.observe(skillsSection);
         });
+        
+        // Particle Animation
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Random animation
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                
+                particle.style.animation = `floating ${duration}s ease-in-out ${delay}s infinite alternate`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Create particles
+        createParticles();
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964ac9a3928a8e66',t:'MTc1MzQzNzM4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();const counterElement = document.getElementById('visit-counter');
-
-</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'964eb373d0c02bdc',t:'MTc1MzQ3ODQyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
