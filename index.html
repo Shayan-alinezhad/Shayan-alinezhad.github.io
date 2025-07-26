@@ -260,6 +260,19 @@
                 width: 100%;
             }
         }
+        .terminal-text::after {
+  content: '_'; /* یا می‌تونی بذاری '█' برای حس واقعی‌تر */
+  animation: blink-caret 0.7s step-end infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -271,9 +284,10 @@
     <!-- Navigation -->
     <nav id="navbar" class="py-4 px-6 flex justify-between items-center sticky-nav">
         <div class="flex items-center">
-            <span class="text-2xl font-bold gradient-text">
-                Shayan.dev
-            </span>
+            <span class="text-2xl font-bold gradient-text terminal-text">
+    Cloner.dev
+</span>
+
         </div>
         
         <div class="hidden md:flex items-center space-x-6">
@@ -314,7 +328,7 @@
     <section id="home" class="min-h-screen flex items-center justify-center px-4 pt-20 md:pt-0">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="text-center md:text-left">
+                    <div class="text-center md:text-left rtl:text-right rtl:md:text-right">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4">
                         <span class="gradient-text" id="hero-name-en">Shayan Alinezhad</span>
                         <span class="gradient-text hidden" id="hero-name-fa">شایان علی‌نژاد</span>
@@ -329,7 +343,7 @@
                     <p class="text-gray-500 mb-8 max-w-lg mx-auto md:mx-0 hidden" id="location-fa">
                         مشتاق تدریس و ایجاد راه‌حل‌های نوآورانه، مستقر در مازندران، ایران
                     </p>
-                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <div class="flex flex-wrap justify-center md:justify-center gap-4 mt-6">
                         <a href="#contact" class="btn">
                             <span id="contact-btn-en">Contact Me</span>
                             <span id="contact-btn-fa" class="hidden">تماس با من</span>
