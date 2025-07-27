@@ -1092,15 +1092,13 @@
 <script>
   AOS.init();
 </script>
-<script>
-  // اعمال انیمیشن به تمام سکشن‌ها
-  document.querySelectorAll('section').forEach((el, index) => {
+<script>document.querySelectorAll('section').forEach((el, index) => {
     el.setAttribute('data-aos', 'fade-up');
-    el.setAttribute('data-aos-delay', index * 100); // برای اختلاف زمانی بین بخش‌ها
+    el.setAttribute('data-aos-delay', index * 100); 
   });
 
   AOS.init({
-    once: true // فقط یک‌بار انیمیشن اجرا شود
+    once: true 
   });
 </script>
 
